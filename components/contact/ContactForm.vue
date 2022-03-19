@@ -37,7 +37,6 @@
             >Nome</label
           >
           <input
-            v-model="form.name"
             class="
               w-full
               px-5
@@ -53,8 +52,9 @@
               shadow-sm
               text-md
             "
-            id="name"
-            name="name"
+            v-model="form.name"
+            id="user_name"
+            name="user_name"
             type="text"
             required=""
             placeholder="Digite seu nome"
@@ -68,7 +68,6 @@
             >Email</label
           >
           <input
-            v-model="form.email"
             class="
               w-full
               px-5
@@ -84,8 +83,9 @@
               shadow-sm
               text-md
             "
-            id="email"
-            name="email"
+            v-model="form.email"
+            id="user_email"
+            name="user_email"
             type="text"
             required=""
             placeholder="Digite seu email"
@@ -99,7 +99,6 @@
             >Assunto</label
           >
           <input
-            v-model="form.subject"
             class="
               w-full
               px-5
@@ -115,8 +114,9 @@
               shadow-sm
               text-md
             "
-            id="subject"
-            name="subject"
+            v-model="form.subject"
+            id="user_subject"
+            name="user_subject"
             type="text"
             required=""
             placeholder="Digite o assunto"
@@ -131,7 +131,6 @@
             >Mensagem</label
           >
           <textarea
-            v-model="form.message"
             class="
               w-full
               px-5
@@ -147,6 +146,7 @@
               shadow-sm
               text-md
             "
+            v-model="form.message"
             id="message"
             name="message"
             cols="14"
@@ -196,13 +196,13 @@ export default {
 
   methods: {
     async sendForm() {
-      const { serviceId, templateId, userId } = this.$config.emailjs;
+      const { serviceId, templateId1, userId } = this.$config.emailjs;
 
       try {
         this.$nuxt.$loading.start();
         const result = await emailjs.sendForm(
           serviceId,
-          templateId,
+          templateId1,
           this.$refs.form,
           userId
         );
@@ -211,9 +211,8 @@ export default {
         console.log("FAILED...", error.text);
       } finally {
         this.$nuxt.$loading.finish();
+        this.form = {};
       }
-
-      this.form = {};
     },
   },
 };

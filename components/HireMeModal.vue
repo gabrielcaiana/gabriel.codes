@@ -47,22 +47,19 @@
                 "
               >
                 <h5 class="text-primary-dark dark:text-primary-light text-xl">
-                  What project are you looking for?
+                  Qual projeto você está procurando?
                 </h5>
                 <button
                   class="px-4 text-primary-dark dark:text-primary-light"
-                  @click="showModal()"
+                  @click="[showModal(), resetForm()]"
                 >
                   <i data-feather="x" class="w-8 sm:w-12"></i>
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
                 <form
-                  @submit="
-                    (e) => {
-                      e.preventDefault;
-                    }
-                  "
+                  ref="form"
+                  @submit.prevent="sendForm"
                   class="max-w-xl m-4 text-left"
                 >
                   <div class="mt-0">
@@ -80,12 +77,13 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      id="name"
-                      name="name"
+                      v-model="form.name"
+                      id="user_name"
+                      name="user_name"
                       type="text"
                       required=""
-                      placeholder="Name"
-                      aria-label="Name"
+                      placeholder="Nome"
+                      aria-label="Nome"
                     />
                   </div>
                   <div class="mt-6">
@@ -103,8 +101,9 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      id="email"
-                      name="email"
+                      v-model="form.email"
+                      id="user_email"
+                      name="user_email"
                       type="text"
                       required=""
                       placeholder="Email"
@@ -126,12 +125,14 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      id="subject"
-                      name="subject"
+                      v-model="form.category"
+                      id="user_category"
+                      name="user_category"
                       type="text"
                       required=""
-                      aria-label="Project Category"
+                      aria-label="Categoria do projeto"
                     >
+                      <option value="" disabled>Selecione uma categoria</option>
                       <option
                         v-for="category in categories"
                         :key="category.id"
@@ -157,18 +158,19 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
+                      v-model="form.message"
                       id="message"
                       name="message"
                       cols="14"
                       rows="6"
-                      aria-label="Details"
-                      placeholder="Project description"
+                      aria-label="Detalhes"
+                      placeholder="Detalhes do projeto"
                     ></textarea>
                   </div>
 
                   <div class="mt-6 pb-4 sm:pb-1">
                     <Button
-                      title="Send Request"
+                      title="Enviar"
                       class="
                         px-4
                         sm:px-6
@@ -182,33 +184,10 @@
                         duration-500
                       "
                       type="submit"
-                      aria-label="Submit Request"
+                      aria-label="Enviar formulário"
                     />
                   </div>
                 </form>
-              </div>
-              <div
-                class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right"
-              >
-                <Button
-                  title="Close"
-                  class="
-                    px-4
-                    sm:px-6
-                    py-2
-                    bg-gray-600
-                    text-primary-light
-                    hover:bg-ternary-dark
-                    dark:bg-gray-200
-                    dark:text-secondary-dark
-                    dark:hover:bg-primary-light
-                    rounded-md
-                    focus:ring-1 focus:ring-indigo-900
-                    duration-500
-                  "
-                  @click="showModal()"
-                  aria-label="Close Fale comigo Modal"
-                />
               </div>
             </div>
           </div>
@@ -221,18 +200,49 @@
 <script>
 import feather from "feather-icons";
 import Button from "./reusable/Button.vue";
+import emailjs from "@emailjs/browser";
+
 export default {
   props: ["showModal", "modal", "categories"],
   components: { Button },
   data: () => {
     return {
-      // @todo
+      form: {
+        name: "",
+        email: "",
+        category: "",
+        message: "",
+      },
     };
   },
   mounted() {
     feather.replace();
   },
-  methods: {},
+  methods: {
+    async sendForm() {
+      const { serviceId, templateId2, userId } = this.$config.emailjs;
+
+      try {
+        this.$nuxt.$loading.start();
+        const result = await emailjs.sendForm(
+          serviceId,
+          templateId2,
+          this.$refs.form,
+          userId
+        );
+        console.log("SUCCESS!", result.text);
+      } catch (error) {
+        console.log("FAILED...", error.text);
+      } finally {
+        this.$nuxt.$loading.finish();
+        this.form = {};
+      }
+    },
+
+    resetForm() {
+      this.form = {};
+    },
+  },
 };
 </script>
 
