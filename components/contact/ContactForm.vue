@@ -25,7 +25,11 @@
       >
         Formulário de contato
       </p>
-      <form @submit.prevent="sendForm" class="font-general-regular space-y-7">
+      <form
+        ref="form"
+        @submit.prevent="sendForm"
+        class="font-general-regular space-y-7"
+      >
         <div class="">
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
@@ -175,6 +179,7 @@
 </template>
 
 <script>
+import emailjs from "@emailjs/browser";
 import Button from "../reusable/Button.vue";
 export default {
   components: { Button },
@@ -190,8 +195,24 @@ export default {
   },
 
   methods: {
-    sendForm() {
-      console.log(this.form);
+    async sendForm() {
+      const { serviceId, templateId, userId } = this.$config.emailjs;
+
+      try {
+        this.$nuxt.$loading.start();
+        const result = await emailjs.sendForm(
+          serviceId,
+          templateId,
+          this.$refs.form,
+          userId
+        );
+        console.log("SUCCESS!", result.text);
+      } catch (error) {
+        console.log("FAILED...", error.text);
+      } finally {
+        this.$nuxt.$loading.finish();
+      }
+
       this.form = {};
     },
   },
