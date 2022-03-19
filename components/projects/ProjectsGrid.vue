@@ -165,6 +165,10 @@ export default {
       } else if (this.searchProject) {
         return this.filterProjectsBySearch();
       }
+
+      if (this.$route.name === "index") {
+        return this.projects.slice(0, 6);
+      }
       return this.projects;
     },
   },
