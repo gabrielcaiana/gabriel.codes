@@ -191,11 +191,7 @@ export default {
 
   methods: {
     sendForm() {
-      this.$axios.$post("/mail/send", {
-        from: this.form.name,
-        subject: this.form.subject,
-        text: this.form.message,
-      });
+      console.log(this.form);
       this.form = {};
     },
   },

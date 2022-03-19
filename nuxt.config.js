@@ -38,21 +38,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    "@nuxtjs/axios",
-    [
-      "nuxt-mail",
-      {
-        message: {
-          to: process.env.VUE_GMAIL_ADDRESS,
-        },
-        smtp: {
-          host: "outlook.office365.com",
-          port: 465,
-        },
-      },
-    ],
-  ],
+  modules: ["@nuxtjs/axios"],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };
