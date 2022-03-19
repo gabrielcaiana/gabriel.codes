@@ -1,26 +1,3 @@
-<script>
-import { mapState } from "vuex";
-import feather from "feather-icons";
-import FooterCopyright from "./FooterCopyright.vue";
-export default {
-  components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate", "socialProfiles"]),
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
-</script>
-
 <template>
   <div class="container mx-auto">
     <div
@@ -45,7 +22,7 @@ export default {
             mb-5
           "
         >
-          Follow me
+          Siga-me
         </p>
         <ul class="flex gap-4 sm:gap-8">
           <a
@@ -77,5 +54,28 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from "vuex";
+import feather from "feather-icons";
+import FooterCopyright from "./FooterCopyright.vue";
+export default {
+  components: { FooterCopyright },
+  data: () => {
+    return {
+      // Todo
+    };
+  },
+  computed: {
+    ...mapState(["copyrightDate", "socialProfiles"]),
+  },
+  mounted() {
+    feather.replace();
+  },
+  updated() {
+    feather.replace();
+  },
+};
+</script>
 
 <style scoped></style>

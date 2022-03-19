@@ -1,19 +1,3 @@
-<script>
-import { mapState } from "vuex";
-
-export default {
-  data: () => {
-    return {
-      projectName: "Portfolio",
-      author: "Gabriel Caiana",
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate"]),
-  },
-};
-</script>
-
 <template>
   <div class="flex justify-center items-center text-center">
     <div
@@ -53,5 +37,21 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from "vuex";
+
+export default {
+  data: () => {
+    return {
+      projectName: "Portfolio",
+      author: "Gabriel Caiana",
+    };
+  },
+  computed: {
+    ...mapState(["copyrightDate"]),
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

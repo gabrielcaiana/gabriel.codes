@@ -1,14 +1,3 @@
-<script>
-export default {
-  props: ["client"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
-</script>
-
 <template>
   <!-- About single client -->
   <div>
@@ -30,5 +19,16 @@ export default {
     />
   </div>
 </template>
+
+<script>
+export default {
+  props: ["client"],
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

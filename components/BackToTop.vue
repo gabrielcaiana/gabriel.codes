@@ -1,3 +1,33 @@
+<template>
+  <!-- Scroll to top -->
+  <transition name="fade">
+    <div
+      v-show="isScrolled"
+      class="
+        transition
+        duration-500
+        transform
+        hover:scale-110
+        rounded-full
+        cursor-pointer
+        flex
+        p-2
+        bg-green-400
+        hover:bg-green-500
+        text-white
+        items-center
+        hover:shadow-sm
+        border-none
+        ring-none
+        outline-none
+      "
+      @click="backToTop"
+    >
+      <i data-feather="chevron-up"></i>
+    </div>
+  </transition>
+</template>
+
 <script>
 import feather from "feather-icons";
 
@@ -36,35 +66,5 @@ export default {
   },
 };
 </script>
-
-<template>
-  <!-- Scroll to top -->
-  <transition name="fade">
-    <div
-      v-show="isScrolled"
-      class="
-        transition
-        duration-500
-        transform
-        hover:scale-110
-        rounded-full
-        cursor-pointer
-        flex
-        p-2
-        bg-green-400
-        hover:bg-green-500
-        text-white
-        items-center
-        hover:shadow-sm
-        border-none
-        ring-none
-        outline-none
-      "
-      @click="backToTop"
-    >
-      <i data-feather="chevron-up"></i>
-    </div>
-  </transition>
-</template>
 
 <style lang="scss" scoped></style>

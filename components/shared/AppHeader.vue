@@ -1,46 +1,3 @@
-<script>
-import { mapState } from "vuex";
-import HireMeModal from "../HireMeModal.vue";
-import AppNavigation from "./AppNavigation.vue";
-
-export default {
-  components: {
-    HireMeModal,
-    AppNavigation,
-  },
-  data: () => {
-    return {
-      isOpen: false,
-      modal: false,
-    };
-  },
-
-  computed: {
-    ...mapState(["categories"]),
-  },
-  methods: {
-    themeSwitcher() {
-      this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
-    },
-    showModal() {
-      if (this.modal) {
-        // Stop screen scrolling
-        document
-          .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
-      } else {
-        document
-          .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
-      }
-    },
-  },
-};
-</script>
-
 <template>
   <nav id="nav" class="sm:container sm:mx-auto">
     <!-- Header -->
@@ -266,3 +223,46 @@ export default {
     />
   </nav>
 </template>
+
+<script>
+import { mapState } from "vuex";
+import HireMeModal from "../HireMeModal.vue";
+import AppNavigation from "./AppNavigation.vue";
+
+export default {
+  components: {
+    HireMeModal,
+    AppNavigation,
+  },
+  data: () => {
+    return {
+      isOpen: false,
+      modal: false,
+    };
+  },
+
+  computed: {
+    ...mapState(["categories"]),
+  },
+  methods: {
+    themeSwitcher() {
+      this.$colorMode.preference =
+        this.$colorMode.value == "light" ? "dark" : "light";
+    },
+    showModal() {
+      if (this.modal) {
+        // Stop screen scrolling
+        document
+          .getElementsByTagName("html")[0]
+          .classList.remove("overflow-y-hidden");
+        this.modal = false;
+      } else {
+        document
+          .getElementsByTagName("html")[0]
+          .classList.add("overflow-y-hidden");
+        this.modal = true;
+      }
+    },
+  },
+};
+</script>

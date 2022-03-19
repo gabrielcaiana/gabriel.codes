@@ -1,28 +1,3 @@
-<script>
-import feather from "feather-icons";
-import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
-export default {
-  scrollToTop: true,
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    project() {
-      return this.$store.getters.getProjectById(this.$route.params.id);
-    },
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-  components: { ProjectRelatedProjects },
-};
-</script>
-
 <template>
   <div class="container mx-auto">
     <!-- Check if there are projects and then load -->
@@ -259,5 +234,30 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import feather from "feather-icons";
+import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
+export default {
+  scrollToTop: true,
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+  computed: {
+    project() {
+      return this.$store.getters.getProjectById(this.$route.params.id);
+    },
+  },
+  mounted() {
+    feather.replace();
+  },
+  updated() {
+    feather.replace();
+  },
+  components: { ProjectRelatedProjects },
+};
+</script>
 
 <style lang="scss" scoped></style>

@@ -1,21 +1,3 @@
-<script>
-import feather from "feather-icons";
-import Button from "./reusable/Button.vue";
-export default {
-  props: ["showModal", "modal", "categories"],
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  mounted() {
-    feather.replace();
-  },
-  methods: {},
-};
-</script>
-
 <template>
   <transition name="fade">
     <div v-show="modal" class="font-general-regular fixed inset-0 z-30">
@@ -235,6 +217,24 @@ export default {
     </div>
   </transition>
 </template>
+
+<script>
+import feather from "feather-icons";
+import Button from "./reusable/Button.vue";
+export default {
+  props: ["showModal", "modal", "categories"],
+  components: { Button },
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+  mounted() {
+    feather.replace();
+  },
+  methods: {},
+};
+</script>
 
 <style>
 .modal-body {

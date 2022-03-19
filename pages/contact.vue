@@ -1,3 +1,20 @@
+<template>
+  <div
+    class="
+      container
+      mx-auto
+      flex flex-col-reverse
+      md:flex-row md:py-10 md:mt-20
+    "
+  >
+    <!-- Contact form -->
+    <ContactForm />
+
+    <!-- Contact details -->
+    <ContactDetails :contacts="contacts" />
+  </div>
+</template>
+
 <script>
 import feather from "feather-icons";
 
@@ -32,20 +49,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div
-    class="
-      container
-      mx-auto
-      flex flex-col-reverse
-      md:flex-row md:py-10 md:mt-20
-    "
-  >
-    <!-- Contact form -->
-    <ContactForm />
-
-    <!-- Contact details -->
-    <ContactDetails :contacts="contacts" />
-  </div>
-</template>

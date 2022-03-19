@@ -1,18 +1,3 @@
-<script>
-import { mapState } from "vuex";
-
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(["aboutMe"]),
-  },
-};
-</script>
-
 <template>
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
@@ -38,3 +23,18 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from "vuex";
+
+export default {
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+  computed: {
+    ...mapState(["aboutMe"]),
+  },
+};
+</script>

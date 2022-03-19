@@ -1,14 +1,3 @@
-<script>
-export default {
-  props: ["contacts"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
-</script>
-
 <template>
   <!-- Contact details -->
   <div class="w-full md:w-1/2">
@@ -47,5 +36,16 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["contacts"],
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

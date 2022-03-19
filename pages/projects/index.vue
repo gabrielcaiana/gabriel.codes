@@ -1,3 +1,9 @@
+<template>
+  <div class="container mx-auto">
+    <ProjectsGrid />
+  </div>
+</template>
+
 <script>
 export default {
   scrollToTop: true,
@@ -11,11 +17,5 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="container mx-auto">
-    <ProjectsGrid />
-  </div>
-</template>
 
 <style lang="scss" scoped></style>

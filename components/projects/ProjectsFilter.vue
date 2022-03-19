@@ -1,23 +1,3 @@
-<script>
-export default {
-  props: {
-    select: {
-      type: String,
-      default: "projects",
-    },
-    selectOptions: {
-      type: Array,
-      default: () => [
-        "Web Application",
-        "Mobile Application",
-        "UI/UX Design",
-        "Branding & Anim",
-      ],
-    },
-  },
-};
-</script>
-
 <template>
   <select
     @change="$emit('change', $event.target.value)"
@@ -38,7 +18,7 @@ export default {
       dark:text-ternary-light
     "
   >
-    <option value class="text-sm sm:text-md">All Projects</option>
+    <option value class="text-sm sm:text-md">Todos projetos</option>
     <option
       v-for="option in selectOptions"
       :key="option"
@@ -49,5 +29,25 @@ export default {
     </option>
   </select>
 </template>
+
+<script>
+export default {
+  props: {
+    select: {
+      type: String,
+      default: "projects",
+    },
+    selectOptions: {
+      type: Array,
+      default: () => [
+        "Web Application",
+        "Mobile Application",
+        "UI/UX Design",
+        "Branding & Anim",
+      ],
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

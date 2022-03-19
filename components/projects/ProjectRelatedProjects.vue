@@ -1,37 +1,3 @@
-<script>
-export default {
-  data: () => {
-    return {
-      relatedProject: {
-        relatedProjectsHeading: "Related Projects",
-        relatedProjects: [
-          {
-            id: 1,
-            title: "Mobile UI",
-            img: require("@/static/images/mobile-project-1.jpg"),
-          },
-          {
-            id: 2,
-            title: "Web Application",
-            img: require("@/static/images/web-project-1.jpg"),
-          },
-          {
-            id: 3,
-            title: "UI Design",
-            img: require("@/static/images/ui-project-2.jpg"),
-          },
-          {
-            id: 4,
-            title: "Kabul Mobile App UI",
-            img: require("@/static/images/mobile-project-2.jpg"),
-          },
-        ],
-      },
-    };
-  },
-};
-</script>
-
 <template>
   <div
     class="
@@ -68,3 +34,37 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => {
+    return {
+      relatedProject: {
+        relatedProjectsHeading: "Related Projects",
+        relatedProjects: [
+          {
+            id: 1,
+            title: "Mobile UI",
+            img: require("@/static/images/mobile-project-1.jpg"),
+          },
+          {
+            id: 2,
+            title: "Web Application",
+            img: require("@/static/images/web-project-1.jpg"),
+          },
+          {
+            id: 3,
+            title: "UI Design",
+            img: require("@/static/images/ui-project-2.jpg"),
+          },
+          {
+            id: 4,
+            title: "Kabul Mobile App UI",
+            img: require("@/static/images/mobile-project-2.jpg"),
+          },
+        ],
+      },
+    };
+  },
+};
+</script>

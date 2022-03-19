@@ -1,15 +1,3 @@
-<script>
-import Button from "../reusable/Button.vue";
-export default {
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
-</script>
-
 <template>
   <!-- Contact form -->
   <div class="w-full md:w-1/2">
@@ -188,5 +176,17 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import Button from "../reusable/Button.vue";
+export default {
+  components: { Button },
+  data: () => {
+    return {
+      // @todo
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

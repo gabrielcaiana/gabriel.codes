@@ -1,12 +1,3 @@
-<script>
-import AppBanner from "../components/shared/AppBanner.vue";
-import Button from "../components/reusable/Button.vue";
-export default {
-  scrollToTop: true,
-  components: { AppBanner, Button },
-};
-</script>
-
 <template>
   <div class="container mx-auto">
     <AppBanner />
@@ -33,12 +24,21 @@ export default {
           sm:text-xl
           duration-300
         "
-        aria-label="More Projects"
+        aria-label="Ver mais projetos"
       >
-        <Button title="More Projects" />
+        <Button title="Ver mais projetos" />
       </NuxtLink>
     </div>
   </div>
 </template>
+
+<script>
+import AppBanner from "../components/shared/AppBanner.vue";
+import Button from "../components/reusable/Button.vue";
+export default {
+  scrollToTop: true,
+  components: { AppBanner, Button },
+};
+</script>
 
 <style scoped></style>

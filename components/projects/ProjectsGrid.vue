@@ -1,44 +1,3 @@
-<script>
-import { mapState } from "vuex";
-import feather from "feather-icons";
-
-export default {
-  data: () => {
-    return {
-      selectedProject: "",
-      searchProject: "",
-    };
-  },
-  computed: {
-    ...mapState(["projectsHeading", "projectsDescription", "projects"]),
-    filteredProjects() {
-      if (this.selectedProject) {
-        return this.filterProjectsByCategory();
-      } else if (this.searchProject) {
-        return this.filterProjectsBySearch();
-      }
-      return this.projects;
-    },
-  },
-  methods: {
-    filterProjectsByCategory() {
-      return this.projects.filter((item) => {
-        let category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return category.includes(this.selectedProject);
-      });
-    },
-    filterProjectsBySearch() {
-      let project = new RegExp(this.searchProject, "i");
-      return this.projects.filter((el) => el.title.match(project));
-    },
-  },
-  mounted() {
-    feather.replace();
-  },
-};
-</script>
-
 <template>
   <div class="pt-10 sm:pt-20 md:pt-24">
     <!-- Projects grid header -->
@@ -75,7 +34,7 @@ export default {
           mb-4
         "
       >
-        Search projects by title or filter by category
+        Pesquise projetos por título ou filtre por categoria
       </h3>
       <div
         class="
@@ -127,7 +86,7 @@ export default {
             name="name"
             type="search"
             required=""
-            placeholder="Search Projects"
+            placeholder="Pesquisar projeto"
             aria-label="Name"
           />
         </div>
@@ -186,5 +145,46 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import { mapState } from "vuex";
+import feather from "feather-icons";
+
+export default {
+  data: () => {
+    return {
+      selectedProject: "",
+      searchProject: "",
+    };
+  },
+  computed: {
+    ...mapState(["projectsHeading", "projectsDescription", "projects"]),
+    filteredProjects() {
+      if (this.selectedProject) {
+        return this.filterProjectsByCategory();
+      } else if (this.searchProject) {
+        return this.filterProjectsBySearch();
+      }
+      return this.projects;
+    },
+  },
+  methods: {
+    filterProjectsByCategory() {
+      return this.projects.filter((item) => {
+        let category =
+          item.category.charAt(0).toUpperCase() + item.category.slice(1);
+        return category.includes(this.selectedProject);
+      });
+    },
+    filterProjectsBySearch() {
+      let project = new RegExp(this.searchProject, "i");
+      return this.projects.filter((el) => el.title.match(project));
+    },
+  },
+  mounted() {
+    feather.replace();
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>
