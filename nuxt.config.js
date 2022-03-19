@@ -1,6 +1,5 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
   colorMode: {
     classSuffix: "",
   },
@@ -39,8 +38,21 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
+  modules: [
+    "@nuxtjs/axios",
+    [
+      "nuxt-mail",
+      {
+        message: {
+          to: process.env.VUE_GMAIL_ADDRESS,
+        },
+        smtp: {
+          host: "outlook.office365.com",
+          port: 465,
+        },
+      },
+    ],
+  ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };
