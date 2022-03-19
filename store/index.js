@@ -537,7 +537,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       value: "web",
-      name: "Web Application",
+      name: "Aplicação web",
     },
   ],
 });

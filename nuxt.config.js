@@ -51,7 +51,8 @@ export default {
   publicRuntimeConfig: {
     emailjs: {
       userId: process.env.VUE_EMAILJS_USER_ID,
-      templateId: process.env.VUE_EMAILJS_TEMPLATE_ID,
+      templateId1: process.env.VUE_EMAILJS_TEMPLATE1_ID,
+      templateId2: process.env.VUE_EMAILJS_TEMPLATE2_ID,
       serviceId: process.env.VUE_EMAILJS_SERVICE_ID,
     },
   },
