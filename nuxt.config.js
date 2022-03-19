@@ -38,8 +38,23 @@ export default {
     "@nuxtjs/color-mode",
   ],
 
+  loading: {
+    color: "green",
+    height: "5px",
+    failedColor: "red",
+    continuous: true,
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
+
+  publicRuntimeConfig: {
+    emailjs: {
+      userId: process.env.VUE_EMAILJS_USER_ID,
+      templateId: process.env.VUE_EMAILJS_TEMPLATE_ID,
+      serviceId: process.env.VUE_EMAILJS_SERVICE_ID,
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
