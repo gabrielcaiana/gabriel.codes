@@ -2,6 +2,18 @@
   <div
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
+    <div v-if="headerVersion" class="w-screen bg-green-500">
+      <p class="text-white text-center">
+        Você está visualizando a nova versão do meu site, caso deseje visitar a
+        antiga
+        <a
+          class="underline-offset-1 font-bold"
+          href="https://v1.gabrielcaiana.com"
+          >clique aqui</a
+        >
+      </p>
+    </div>
+
     <!-- App header -->
     <AppHeader />
 
@@ -40,10 +52,15 @@ import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
 export default {
   data: () => {
-    return {
-      // Todo
-    };
+    return {};
   },
+
+  computed: {
+    headerVersion() {
+      return this.$route.name === "index";
+    },
+  },
+
   mounted() {
     feather.replace();
   },
