@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div class="w-full flex justify-center items-center mt-10">
-      <h1 class="text-white text-xl">Em breve</h1>
+      <h1 class="dark:text-white text-gray-500 text-xl">Em breve</h1>
     </div>
   </div>
 </template>
