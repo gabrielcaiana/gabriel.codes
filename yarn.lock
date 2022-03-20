@@ -1313,6 +1313,11 @@
     "defu" "^5.0.0"
     "lodash.template" "^4.5.0"
 
+"@nuxtjs/recaptcha@^1.0.4":
+  "integrity" "sha512-4K9cXaVGZrcXy3ys5OBL1/njkOxTpRjLDKLU/S6qatyISdGLv+tSFLSCJeEKTCO7UHC1fMCTb5UlOWajkQqPdw=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/recaptcha/-/recaptcha-1.0.4.tgz"
+  "version" "1.0.4"
+
 "@nuxtjs/tailwindcss@^4.2.0":
   "integrity" "sha512-Sku7VETunn5YmvzkXFDuRdP1gUGau02eh5HtcAsI9//1hpSuEN49n3XhatBrPOXQ57WhUlnjXf0/LjT9KQH0+A=="
   "resolved" "https://registry.npmjs.org/@nuxtjs/tailwindcss/-/tailwindcss-4.2.1.tgz"
@@ -3454,11 +3459,6 @@
     "inherits" "^2.0.4"
     "minimalistic-assert" "^1.0.1"
     "minimalistic-crypto-utils" "^1.0.1"
-
-"emailjs@^3.8.0":
-  "integrity" "sha512-ZLMFAC3C8GNebBvDpPgHwPeK4Ajx/rkq1TqLNFH9bC9TwEac1JhIYb3KuBY5eNfr0YVUaEfGughWszRBD5rcgQ=="
-  "resolved" "https://registry.npmjs.org/emailjs/-/emailjs-3.8.0.tgz"
-  "version" "3.8.0"
 
 "emoji-regex@^8.0.0":
   "integrity" "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="

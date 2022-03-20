@@ -155,6 +155,8 @@
           ></textarea>
         </div>
 
+        <recaptcha />
+
         <div class="mt-6">
           <Button
             title="Enviar mensagem"
@@ -194,12 +196,30 @@ export default {
     };
   },
 
+  async mounted() {
+    try {
+      await this.$recaptcha.init();
+    } catch (e) {
+      console.error(e);
+    }
+  },
+
+  beforeDestroy() {
+    this.$recaptcha.destroy();
+  },
+
   methods: {
     async sendForm() {
       const { serviceId, templateId1, userId } = this.$config.emailjs;
 
       try {
         this.$nuxt.$loading.start();
+
+        // reCAPTCHA
+        const token = await this.$recaptcha.execute("login");
+        console.log("ReCaptcha token:", token);
+
+        // emailjs
         const result = await emailjs.sendForm(
           serviceId,
           templateId1,

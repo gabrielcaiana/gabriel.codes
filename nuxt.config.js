@@ -46,7 +46,15 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      "@nuxtjs/recaptcha",
+      {
+        siteKey: process.env.VUE_RECAPTCHA_SITE_KEY,
+        version: 3,
+      },
+    ],
+  ],
 
   publicRuntimeConfig: {
     emailjs: {
