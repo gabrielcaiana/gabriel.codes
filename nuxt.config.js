@@ -46,7 +46,15 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/pwa"],
+
+  pwa: {
+    manifest: {
+      name: "Gabriel Caiana",
+      short_name: "Gabriel",
+      lang: "pt-BR",
+    },
+  },
 
   publicRuntimeConfig: {
     emailjs: {
