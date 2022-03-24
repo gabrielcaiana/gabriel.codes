@@ -2,7 +2,7 @@
   <div
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
-    <div v-if="headerVersion" class="w-screen bg-green-500">
+    <div v-if="headerVersion" class="w-full bg-green-500">
       <p class="text-white text-center">
         Você está visualizando a nova versão do meu site, caso deseje visitar a
         antiga
