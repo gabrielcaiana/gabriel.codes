@@ -61,11 +61,19 @@
           :key="projectImage.id"
         >
           <img
+            @click="showProjectImageDialog(projectImage.img)"
             :src="projectImage.img"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
           />
         </div>
       </div>
+
+      <AppModal>
+        <img
+          :src="dialogImage"
+          class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
+        />
+      </AppModal>
 
       <div class="block sm:flex gap-0 sm:gap-10 mt-14">
         <div class="w-full sm:w-1/3 text-left">
@@ -186,14 +194,26 @@
 
 <script>
 import BaseIcon from "@/components/reusable/BaseIcon.vue";
+import AppModal from "@/components/shared/AppModal.vue";
 
 export default {
   scrollToTop: true,
-  components: { BaseIcon },
+  components: { BaseIcon, AppModal },
+
+  data: () => ({
+    dialogImage: null,
+  }),
 
   computed: {
     project() {
       return this.$store.getters.getProjectById(this.$route.params.id);
+    },
+  },
+
+  methods: {
+    showProjectImageDialog(image) {
+      this.dialogImage = image;
+      this.$nuxt.$emit("dialogProjectImage");
     },
   },
 };
