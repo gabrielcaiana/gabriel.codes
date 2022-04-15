@@ -1,6 +1,11 @@
 <template>
   <div v-on="$listeners">
-    <i :height="size" :width="size" :data-feather="name" :stroke="color"></i>
+    <i
+      :height="size"
+      :width="size"
+      :data-feather="name"
+      :class="$attrs.class"
+    ></i>
   </div>
 </template>
 
@@ -10,10 +15,6 @@ import feather from "feather-icons";
 export default {
   name: "BaseIcon",
   props: {
-    name: {
-      type: String,
-      default: null,
-    },
     color: {
       type: String,
       default: "white",
