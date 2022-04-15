@@ -1,5 +1,4 @@
 <template>
-  <!-- About clients section -->
   <div class="mt-10 sm:mt-20">
     <p
       class="
@@ -26,11 +25,6 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
   computed: {
     ...mapState(["clientsHeading", "clients"]),
   },

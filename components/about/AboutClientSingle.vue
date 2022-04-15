@@ -1,5 +1,4 @@
 <template>
-  <!-- About single client -->
   <div>
     <img
       :src="client.img"
@@ -23,12 +22,5 @@
 <script>
 export default {
   props: ["client"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
 };
 </script>
-
-<style lang="scss" scoped></style>

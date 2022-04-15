@@ -1,6 +1,5 @@
 <template>
   <nav id="nav" class="sm:container sm:mx-auto">
-    <!-- Header -->
     <div
       class="
         z-10
@@ -11,9 +10,7 @@
         py-6
       "
     >
-      <!-- Header menu links and small screen hamburger menu -->
       <div class="flex justify-between items-center px-6 sm:px-0">
-        <!-- Header logos -->
         <div>
           <NuxtLink to="/">
             <img
@@ -32,7 +29,6 @@
           </NuxtLink>
         </div>
 
-        <!-- Theme switcher small screen -->
         <button
           @click="themeSwitcher"
           class="
@@ -48,7 +44,6 @@
             cursor-pointer
           "
         >
-          <!-- Dark mode icon -->
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +66,6 @@
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
             />
           </svg>
-          <!-- Light mode icon -->
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +83,6 @@
           </svg>
         </button>
 
-        <!-- Small screen hamburger menu -->
         <div class="sm:hidden">
           <button
             @click="isOpen = !isOpen"
@@ -125,7 +118,6 @@
         </div>
       </div>
 
-      <!-- Header links -->
       <AppNavigation
         :isOpen="isOpen"
         :showModal="showModal"
@@ -133,11 +125,9 @@
         :categories="categories"
       />
 
-      <!-- Header right section buttons -->
       <div
         class="hidden sm:flex justify-between items-center flex-col md:flex-row"
       >
-        <!-- Hire me button -->
         <div class="font-general-medium hidden md:block">
           <button
             class="
@@ -157,7 +147,6 @@
           </button>
         </div>
 
-        <!-- Theme switcher large screen -->
         <button
           @click="themeSwitcher"
           class="
@@ -171,7 +160,6 @@
             cursor-pointer
           "
         >
-          <!-- Dark mode icon -->
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +182,6 @@
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
             />
           </svg>
-          <!-- Light mode icon -->
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +201,6 @@
       </div>
     </div>
 
-    <!-- Hire me modal -->
     <HireMeModal
       :showModal="showModal"
       :modal="modal"
@@ -251,7 +237,6 @@ export default {
     },
     showModal() {
       if (this.modal) {
-        // Stop screen scrolling
         document
           .getElementsByTagName("html")[0]
           .classList.remove("overflow-y-hidden");
