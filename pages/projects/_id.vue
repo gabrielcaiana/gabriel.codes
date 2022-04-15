@@ -19,10 +19,11 @@
         </p>
         <div class="flex">
           <div class="flex items-center mr-10">
-            <i
-              data-feather="clock"
+            <BaseIcon
+              name="clock"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            ></i>
+            />
+
             <span
               class="
                 font-general-medium
@@ -35,10 +36,10 @@
             >
           </div>
           <div class="flex items-center">
-            <i
-              data-feather="tag"
+            <BaseIcon
+              name="tag"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            ></i>
+            />
             <span
               class="
                 font-general-medium
@@ -141,11 +142,9 @@
                   shadow-sm
                   duration-500
                 "
-                ><i
-                  :data-feather="social.icon"
-                  class="w-4 lg:w-5 h-4 lg:h-5"
-                ></i
-              ></a>
+              >
+                <BaseIcon :name="social.icon" class="w-4 lg:w-5 h-4 lg:h-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -186,19 +185,16 @@
 </template>
 
 <script>
-import feather from "feather-icons";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
+
 export default {
   scrollToTop: true,
+  components: { BaseIcon },
+
   computed: {
     project() {
       return this.$store.getters.getProjectById(this.$route.params.id);
     },
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
 };
 </script>
