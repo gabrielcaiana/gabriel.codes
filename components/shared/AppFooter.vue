@@ -10,7 +10,6 @@
         dark:border-secondary-dark
       "
     >
-      <!-- Footer social links -->
       <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
         <p
           class="
@@ -49,7 +48,6 @@
         </ul>
       </div>
 
-      <!-- Footer copyright -->
       <FooterCopyright />
     </div>
   </div>
@@ -61,11 +59,6 @@ import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
   components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    };
-  },
   computed: {
     ...mapState(["copyrightDate", "socialProfiles"]),
   },
@@ -77,5 +70,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>
