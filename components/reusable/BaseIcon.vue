@@ -15,9 +15,9 @@ import feather from "feather-icons";
 export default {
   name: "BaseIcon",
   props: {
-    color: {
+    name: {
       type: String,
-      default: "white",
+      default: null,
     },
     size: {
       type: String,
