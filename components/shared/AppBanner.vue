@@ -9,7 +9,6 @@
       sm:mt-10
     "
   >
-    <!-- Banner left contents -->
     <div class="w-full md:w-1/3 text-left">
       <h1
         class="
@@ -80,7 +79,6 @@
       </div>
     </div>
 
-    <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <img
         v-if="this.$colorMode.value == 'dark'"
@@ -96,12 +94,6 @@
 import feather from "feather-icons";
 
 export default {
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-
   mounted() {
     feather.replace();
   },
@@ -110,5 +102,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
