@@ -22,16 +22,18 @@
       "
       @click="backToTop"
     >
-      <i data-feather="chevron-up"></i>
+      <BaseIcon name="chevron-up" />
     </div>
   </transition>
 </template>
 
 <script>
-import feather from "feather-icons";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
 
 export default {
-  components: {},
+  components: {
+    BaseIcon,
+  },
   data() {
     return {
       userScrollPosition: 0,
@@ -44,11 +46,8 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.updateScrollPosition);
-    feather.replace();
   },
-  updated() {
-    feather.replace();
-  },
+
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScrollPosition);
   },

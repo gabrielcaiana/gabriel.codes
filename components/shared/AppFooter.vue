@@ -43,7 +43,7 @@
               duration-500
             "
           >
-            <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i>
+            <BaseIcon :name="social.icon" class="w-6 sm:w-8 h-6 sm:h-8" />
           </a>
         </ul>
       </div>
@@ -55,18 +55,13 @@
 
 <script>
 import { mapState } from "vuex";
-import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
+
 export default {
-  components: { FooterCopyright },
+  components: { FooterCopyright, BaseIcon },
   computed: {
     ...mapState(["copyrightDate", "socialProfiles"]),
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
 };
 </script>

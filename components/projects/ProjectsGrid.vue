@@ -53,10 +53,10 @@
               cursor-pointer
             "
           >
-            <i
-              data-feather="search"
+            <BaseIcon
               class="text-ternary-dark dark:text-ternary-light"
-            ></i>
+              name="search"
+            />
           </span>
           <input
             v-model="searchProject"
@@ -141,9 +141,11 @@
 
 <script>
 import { mapState } from "vuex";
-import feather from "feather-icons";
-
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
 export default {
+  components: {
+    BaseIcon,
+  },
   data: () => {
     return {
       selectedProject: "",
@@ -177,9 +179,6 @@ export default {
       let project = new RegExp(this.searchProject, "i");
       return this.projects.filter((el) => el.title.match(project));
     },
-  },
-  mounted() {
-    feather.replace();
   },
 };
 </script>
