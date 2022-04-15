@@ -66,12 +66,12 @@
             hover:text-white
             duration-500
           "
-          aria-label="Download Resume"
+          aria-label="Contact me"
         >
-          <i
-            data-feather="arrow-right-circle"
+          <BaseIcon
+            name="arrow-right-circle"
             class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
-          ></i>
+          />
           <span class="text-sm sm:text-lg font-general-medium duration-100"
             >Fale comigo</span
           ></nuxt-link
@@ -91,14 +91,11 @@
 </template>
 
 <script>
-import feather from "feather-icons";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
 
 export default {
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
+  components: {
+    BaseIcon,
   },
 };
 </script>
