@@ -14,10 +14,11 @@
       </h2>
       <ul class="font-general-regular">
         <li class="flex" v-for="contact in contacts" :key="contact.id">
-          <i
-            :data-feather="contact.icon"
+          <BaseIcon
+            :name="contact.icon"
             class="w-5 text-gray-500 dark:text-gray-400 mr-4"
-          ></i>
+          />
+
           <a
             href="#"
             class="text-lg mb-4 text-ternary-dark dark:text-ternary-light"
@@ -37,7 +38,12 @@
 </template>
 
 <script>
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
+
 export default {
+  components: {
+    BaseIcon,
+  },
   props: ["contacts"],
 };
 </script>

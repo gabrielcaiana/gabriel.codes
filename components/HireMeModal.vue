@@ -51,7 +51,7 @@
                   class="px-4 text-primary-dark dark:text-primary-light"
                   @click="[showModal(), resetForm()]"
                 >
-                  <i data-feather="x" class="w-8 sm:w-12"></i>
+                  <BaseIcon name="x" class="w-8 sm:w-12" />
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
@@ -196,13 +196,13 @@
 </template>
 
 <script>
-import feather from "feather-icons";
 import Button from "./reusable/Button.vue";
 import emailjs from "@emailjs/browser";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
 
 export default {
   props: ["showModal", "modal", "categories"],
-  components: { Button },
+  components: { Button, BaseIcon },
   data: () => {
     return {
       form: {
@@ -212,9 +212,6 @@ export default {
         message: "",
       },
     };
-  },
-  mounted() {
-    feather.replace();
   },
   methods: {
     async sendForm() {
