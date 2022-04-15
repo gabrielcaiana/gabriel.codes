@@ -1,11 +1,9 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   colorMode: {
     classSuffix: "",
   },
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Gabriel Caiana - Website",
     htmlAttrs: {
@@ -20,23 +18,15 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/app.css"],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // "~/plugins/back-to-top.js"
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-  ],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
 
   loading: {
     color: "green",
@@ -45,7 +35,6 @@ export default {
     continuous: true,
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxtjs/pwa"],
 
   pwa: {
@@ -65,6 +54,5 @@ export default {
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };

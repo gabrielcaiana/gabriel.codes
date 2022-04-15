@@ -53,10 +53,10 @@
               cursor-pointer
             "
           >
-            <i
+            <!-- <i
               data-feather="search"
               class="text-ternary-dark dark:text-ternary-light"
-            ></i>
+            ></i> -->
           </span>
           <input
             v-model="searchProject"
@@ -141,7 +141,6 @@
 
 <script>
 import { mapState } from "vuex";
-import feather from "feather-icons";
 
 export default {
   data: () => {
@@ -177,9 +176,6 @@ export default {
       let project = new RegExp(this.searchProject, "i");
       return this.projects.filter((el) => el.title.match(project));
     },
-  },
-  mounted() {
-    feather.replace();
   },
 };
 </script>
