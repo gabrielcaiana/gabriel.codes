@@ -141,7 +141,7 @@
 
 <script>
 import { mapState } from "vuex";
-import BaseIcon from "../reusable/BaseIcon.vue";
+import BaseIcon from "@/components/reusable/BaseIcon.vue";
 export default {
   components: {
     BaseIcon,
