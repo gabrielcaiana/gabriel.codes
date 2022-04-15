@@ -1,12 +1,10 @@
 <template>
-  <div v-on="$listeners">
-    <i
-      :height="size"
-      :width="size"
-      :data-feather="name"
-      :class="$attrs.class"
-    ></i>
-  </div>
+  <i
+    :height="size"
+    :width="size"
+    :data-feather="name"
+    :class="$attrs.class"
+  ></i>
 </template>
 
 <script>
