@@ -1,6 +1,5 @@
 <template>
   <div class="pt-10 sm:pt-20 md:pt-24">
-    <!-- Projects grid header -->
     <div class="text-center">
       <p
         class="
@@ -15,13 +14,8 @@
       >
         {{ projectsHeading }}
       </p>
-      <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
-      <!-- <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
-        {{ projectsDescription }}
-      </p> -->
     </div>
 
-    <!-- Filter and search projects -->
     <div class="mt-8 sm:mt-10">
       <h3
         class="
@@ -94,7 +88,6 @@
       </div>
     </div>
 
-    <!-- Projects grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
       <div
         v-for="project in filteredProjects"
@@ -190,5 +183,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

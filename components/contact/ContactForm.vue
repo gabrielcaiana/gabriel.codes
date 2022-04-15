@@ -1,5 +1,4 @@
 <template>
-  <!-- Contact form -->
   <div class="w-full md:w-1/2">
     <div
       class="
@@ -217,5 +216,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

@@ -1,5 +1,4 @@
 <template>
-  <!-- Contact details -->
   <div class="w-full md:w-1/2">
     <div class="text-left max-w-xl px-6">
       <h2
@@ -40,12 +39,5 @@
 <script>
 export default {
   props: ["contacts"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
 };
 </script>
-
-<style lang="scss" scoped></style>

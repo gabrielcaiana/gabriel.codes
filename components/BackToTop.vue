@@ -1,5 +1,4 @@
 <template>
-  <!-- Scroll to top -->
   <transition name="fade">
     <div
       v-show="isScrolled"
@@ -66,5 +65,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
