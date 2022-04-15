@@ -53,10 +53,10 @@
               cursor-pointer
             "
           >
-            <!-- <i
-              data-feather="search"
+            <BaseIcon
               class="text-ternary-dark dark:text-ternary-light"
-            ></i> -->
+              name="search"
+            />
           </span>
           <input
             v-model="searchProject"
@@ -141,8 +141,11 @@
 
 <script>
 import { mapState } from "vuex";
-
+import BaseIcon from "../reusable/BaseIcon.vue";
 export default {
+  components: {
+    BaseIcon,
+  },
   data: () => {
     return {
       selectedProject: "",
