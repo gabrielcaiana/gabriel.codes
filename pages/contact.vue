@@ -7,10 +7,8 @@
       md:flex-row md:py-10 md:mt-20
     "
   >
-    <!-- Contact form -->
     <ContactForm />
 
-    <!-- Contact details -->
     <ContactDetails :contacts="contacts" />
   </div>
 </template>

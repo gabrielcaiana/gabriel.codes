@@ -7,15 +7,5 @@
 <script>
 export default {
   scrollToTop: true,
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    // @todo
-  },
 };
 </script>
-
-<style lang="scss" scoped></style>

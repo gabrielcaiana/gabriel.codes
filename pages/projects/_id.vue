@@ -1,8 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <!-- Check if there are projects and then load -->
     <div v-if="project">
-      <!-- Project heading and meta info -->
       <div>
         <p
           class="
@@ -55,7 +53,6 @@
         </div>
       </div>
 
-      <!-- Project gallery -->
       <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         <div
           class="mb-10 sm:mb-0"
@@ -69,11 +66,8 @@
         </div>
       </div>
 
-      <!-- Project info -->
       <div class="block sm:flex gap-0 sm:gap-10 mt-14">
-        <!-- Single project left section details -->
         <div class="w-full sm:w-1/3 text-left">
-          <!-- Single project objectives -->
           <div class="mb-7">
             <p
               class="
@@ -96,7 +90,6 @@
             </p>
           </div>
 
-          <!-- Single project technologies -->
           <div class="mb-7">
             <p
               class="
@@ -119,7 +112,6 @@
             </p>
           </div>
 
-          <!-- Single project social sharing -->
           <div>
             <p
               class="
@@ -158,7 +150,6 @@
           </div>
         </div>
 
-        <!-- Single project right section details -->
         <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
             class="
@@ -188,7 +179,6 @@
       </div>
     </div>
 
-    <!-- Load not found components if no project found -->
     <div v-else class="font-general-medium container mx-auto text-center">
       <h1>No projects yet</h1>
     </div>
@@ -199,11 +189,6 @@
 import feather from "feather-icons";
 export default {
   scrollToTop: true,
-  data: () => {
-    return {
-      // @todo
-    };
-  },
   computed: {
     project() {
       return this.$store.getters.getProjectById(this.$route.params.id);
@@ -217,5 +202,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

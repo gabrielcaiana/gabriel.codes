@@ -11,5 +11,3 @@ export default {
   scrollToTop: true,
 };
 </script>
-
-<style scoped></style>

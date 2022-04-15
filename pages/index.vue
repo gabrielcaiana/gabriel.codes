@@ -4,7 +4,6 @@
 
     <ProjectsGrid />
 
-    <!-- View more projects button -->
     <div class="mt-5 sm:mt-14 flex justify-center">
       <NuxtLink
         to="/projects"
@@ -40,5 +39,3 @@ export default {
   components: { AppBanner, Button },
 };
 </script>
-
-<style scoped></style>
