@@ -6,6 +6,48 @@ export const state = () => ({
   projects: [
     {
       id: uuidv4(),
+      title: "Dev Pomodoro",
+      category: "Web Application",
+      img: "/images/dev-pomodoro/preview-1.png",
+      publishDate: "Abril 15, 2022",
+      tag: "UI / Frontend",
+      objectivesTitle: "Objetivo",
+      objectivesDetails:
+        "Desenvolver uma aplicação para realizar a técnica de pomodoro",
+      techTitle: "Ferramentas e tecnologias",
+      detailsTitle: "Desafio",
+      socialTitle: "Link do site",
+      projectImages: [
+        {
+          id: uuidv4(),
+          title: "Dev Pomodoro",
+          img: "/images/dev-pomodoro/preview-1.png",
+        },
+        {
+          id: uuidv4(),
+          title: "Dev Pomodoro",
+          img: "/images/dev-pomodoro/preview-2.png",
+        },
+      ],
+      technologies: ["Nuxtjs", "vuex", "typescript", "Jest", "Tailwind CSS"],
+      projectDetails: [
+        {
+          id: uuidv4(),
+          details:
+            "Este projeto tem como objetivo proporcionar o dev a utilizar a técnica de pomodoro para melhorar a produtividade e foco, além disso incluindo um sistema de experiência com desafios para ir avançando de nível conforme completa os ciclos realizados.",
+        },
+      ],
+      socialSharings: [
+        {
+          id: uuidv4(),
+          name: "Github",
+          icon: "github",
+          url: "https://github.com/gabrielcaiana/dev-pomodoro",
+        },
+      ],
+    },
+    {
+      id: uuidv4(),
       title: "Nuxtbnb",
       category: "Web Application",
       img: "/images/nuxtbnb/nuxtbnb.png",
@@ -420,6 +462,12 @@ export const state = () => ({
           name: "website",
           icon: "layout",
           url: "https://biobe.com.br/",
+        },
+        {
+          id: uuidv4(),
+          name: "website",
+          icon: "layout",
+          url: "https://dev-pomodoro.gabrielcaiana.com/",
         },
       ],
     },
