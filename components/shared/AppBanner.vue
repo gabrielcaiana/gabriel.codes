@@ -42,7 +42,7 @@
       </p>
       <div class="flex justify-center sm:block">
         <nuxt-link
-          to="/contact"
+          to="/contato"
           class="
             flex
             justify-center

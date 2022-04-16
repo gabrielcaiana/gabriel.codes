@@ -16,7 +16,7 @@
     "
   >
     <NuxtLink
-      to="/projects"
+      to="/projetos"
       class="
         block
         text-left text-lg text-primary-dark
@@ -31,7 +31,7 @@
       >Projetos</NuxtLink
     >
     <NuxtLink
-      to="/about"
+      to="/sobre"
       class="
         block
         text-left text-lg text-primary-dark
@@ -51,7 +51,7 @@
       >Sobre mim</NuxtLink
     >
     <NuxtLink
-      to="/contact"
+      to="/contato"
       class="
         block
         text-left text-lg text-primary-dark

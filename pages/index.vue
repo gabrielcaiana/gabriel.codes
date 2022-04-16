@@ -6,7 +6,7 @@
 
     <div class="mt-5 sm:mt-14 flex justify-center">
       <NuxtLink
-        to="/projects"
+        to="/projetos"
         class="
           font-general-medium
           flex
