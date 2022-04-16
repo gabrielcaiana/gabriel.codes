@@ -104,7 +104,7 @@
         "
         aria-label="Single Project"
       >
-        <NuxtLink :to="`/projects/${project.id}`">
+        <NuxtLink :to="`/projetos/${project.id}`">
           <div>
             <img
               :src="project.img"
