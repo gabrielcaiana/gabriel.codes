@@ -84,7 +84,10 @@
             aria-label="Name"
           />
         </div>
-        <ProjectsFilter @change="selectedProject = $event" />
+        <ProjectsFilter
+          @change="selectedProject = $event"
+          :selectOptions="categories"
+        />
       </div>
     </div>
 
@@ -153,7 +156,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(["projectsHeading", "projectsDescription", "projects"]),
+    ...mapState([
+      "projectsHeading",
+      "projectsDescription",
+      "projects",
+      "categories",
+    ]),
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory();

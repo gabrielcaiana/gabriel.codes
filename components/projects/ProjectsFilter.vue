@@ -21,11 +21,11 @@
     <option value class="text-sm sm:text-md">Todos projetos</option>
     <option
       v-for="option in selectOptions"
-      :key="option"
-      :value="option"
+      :key="option.name"
+      :value="option.name"
       class="sm:text-md"
     >
-      {{ option }}
+      {{ option.name }}
     </option>
   </select>
 </template>
@@ -39,7 +39,7 @@ export default {
     },
     selectOptions: {
       type: Array,
-      default: () => ["Web Application"],
+      default: () => [],
     },
   },
 };
