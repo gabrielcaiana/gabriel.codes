@@ -7,7 +7,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Dev Pomodoro",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/dev-pomodoro/preview-1.png",
       publishDate: "Abril 15, 2022",
       tag: "UI / Frontend",
@@ -49,7 +49,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Nuxtbnb",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/nuxtbnb/nuxtbnb.png",
       publishDate: "Nov 04, 2021",
       tag: "UI / Frontend",
@@ -113,7 +113,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "NLW Heat Vue",
-      category: "Web Application",
+      category: "Vue",
       img: "/images/nlw7/cover.png",
       publishDate: "Jan 05, 2022",
       tag: "Frontend",
@@ -150,7 +150,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Gravador de tela com vuejs",
-      category: "Web Application",
+      category: "Vue",
       img: "/images/screen-record/screen-recorder.png",
       publishDate: "Jan 24, 2022",
       tag: "Frontend",
@@ -187,7 +187,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Ibook",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/ibook/ibook-1.png",
       publishDate: "Jan 24, 2022",
       tag: "UI / Frontend",
@@ -228,7 +228,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Gabriel website v1",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/gabrielcaiana-v1/website-1.png",
       publishDate: "set 14, 2021",
       tag: "UI / Frontend",
@@ -280,7 +280,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Gym Manager",
-      category: "Web Application",
+      category: "HTML/CSS/JS",
       img: "/images/gym-manager/gym-1.png",
       publishDate: "set 03, 2020",
       tag: "UI / Frontend",
@@ -331,7 +331,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Sampa eventos",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/sampa-events/sampa-1.png",
       publishDate: "jun 15, 2021",
       tag: "UI / Frontend",
@@ -382,7 +382,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Jogo da memória",
-      category: "Web Application",
+      category: "HTML/CSS/JS",
       img: "/images/memory-game/memory-game-1.png",
       publishDate: "jun 15, 2021",
       tag: "UI / Frontend",
@@ -417,7 +417,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Biobe",
-      category: "Web Application",
+      category: "Nuxt",
       img: "/images/biobe/biobe-1.png",
       publishDate: "jul 24, 2021",
       tag: "UI / Frontend",
@@ -474,7 +474,7 @@ export const state = () => ({
     {
       id: uuidv4(),
       title: "Gabriel Website Admin",
-      category: "Web Application",
+      category: "Vue",
       img: "/images/gabrielcaiana-website-admin/admin-1.png",
       publishDate: "fev 22, 2022",
       tag: "UI / Frontend",
@@ -584,8 +584,28 @@ export const state = () => ({
   categories: [
     {
       id: uuidv4(),
-      value: "web",
-      name: "Aplicação web",
+      value: "nuxt",
+      name: "Nuxt",
+    },
+    {
+      id: uuidv4(),
+      value: "vue",
+      name: "Vue",
+    },
+    {
+      id: uuidv4(),
+      value: "html",
+      name: "HTML/CSS/JS",
+    },
+    {
+      id: uuidv4(),
+      value: "react",
+      name: "React",
+    },
+    {
+      id: uuidv4(),
+      value: "next",
+      name: "Next",
     },
   ],
 });
@@ -594,12 +614,4 @@ export const getters = {
   getProjectById: (state) => (id) => {
     return state.projects.find((project) => project.id == id);
   },
-};
-
-export const mutations = {
-  // @todo
-};
-
-export const actions = {
-  // @todo
 };
