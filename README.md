@@ -1,5 +1,3 @@
-# My second version website
-
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/26663338/158736930-a5692c32-392a-446f-9ce0-37af65ca0e7b.png"/>
 </p>
