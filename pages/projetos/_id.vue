@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <pre>{{ project }}</pre>
-    <!-- <div v-if="project"> -->
-      <!-- <div>
+
+    <div v-if="project">
+      <div>
         <p
           class="
             font-general-medium
@@ -189,7 +189,7 @@
 
     <div v-else class="font-general-medium container mx-auto text-center">
       <h1>No projects yet</h1>
-    </div> -->
+    </div>
   </div>
 </template>
 
