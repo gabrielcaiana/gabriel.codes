@@ -18,6 +18,16 @@ import feather from "feather-icons";
 
 export default {
   scrollToTop: true,
+
+  head() {
+    return {
+      title: 'Contato',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Fale comigo por email ou por alguma rede social'},
+      ]
+    }
+  },
+
   data: () => {
     return {
       contacts: [
