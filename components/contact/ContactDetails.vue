@@ -30,6 +30,7 @@
             aria-label="Website and Phone"
           >
             {{ contact.name }}
+            
           </a>
         </li>
       </ul>
