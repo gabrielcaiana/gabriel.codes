@@ -13,6 +13,12 @@ export default {
       title: 'Projetos',
       meta: [
         { hid: 'description', name: 'description', content: 'veja alguns dos projetos que já desenvolvi'},
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
       ]
     }
   },

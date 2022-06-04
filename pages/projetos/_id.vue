@@ -214,6 +214,12 @@ export default {
         { hid: 'og-desc', property: 'og:description', content: this.project?.projectDetails[0].details },
         { hid: 'og-image', property: 'og:image', content: this.project?.projectImages[0].img},
         { hid: 'og-url', property: 'og:url', content: `https://gabrielcaiana.com/projetos/${this.project?.id}` } 
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
       ]
     }
   },

@@ -9,5 +9,19 @@
 <script>
 export default {
   scrollToTop: true,
+  head() {
+    return {
+      title: 'Blog',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Leia os artigos que já escrevi'},
+      ],
+    link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
+      ]
+    }
+  },
 };
 </script>

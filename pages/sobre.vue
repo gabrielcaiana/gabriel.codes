@@ -16,6 +16,12 @@ export default {
       title: 'Sobre',
       meta: [
         { hid: 'description', name: 'description', content: 'Conheça um pouco mais sobre minha jornada como desenvolvedor'},
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
       ]
     }
   },

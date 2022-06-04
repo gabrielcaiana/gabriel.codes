@@ -27,7 +27,13 @@ export default {
       { hid: 'og-image', property: 'og:image', content: './static/profile.png'},
       { hid: 'og-url', property: 'og:url', content: 'https://gabrielcaiana.com' } 
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }]
+    link: [
+      {
+        rel: 'canonical',
+        href: 'https://gabrielcaiana.com' + this.$route.path
+      },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" }
+    ]
   },
 
   css: ["~/assets/app.css"],
