@@ -23,10 +23,9 @@ jobs:
     name: Run eslint scanning
     runs-on: ubuntu-latest
     permissions:
-       security-events: write
-      # only required for workflows in private repositories
-      actions: read
       contents: read
+      actions: write
+      security-events: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
