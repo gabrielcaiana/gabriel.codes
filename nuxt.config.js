@@ -30,7 +30,7 @@ export default {
     link: [
       {
         rel: 'canonical',
-        href: 'https://gabrielcaiana.com' + this.$route.path
+        href: 'https://gabrielcaiana.com'
       },
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" }
     ]
