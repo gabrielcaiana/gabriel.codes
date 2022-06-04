@@ -19,15 +19,21 @@ export default {
       ` },
       { name: 'twitter:title', content: 'Gabriel Caiana - Website'},
       { name: 'twitter:description', content: 'Sou desenvolvedor frontend apaixonado por tecnologia, design e inovação digital.'},
-      { name: 'twitter:image', content: './static/profile.png'},
+      { name: 'twitter:image', content: '/profile.png'},
       { name: 'twitter:card', content: 'summary_large_image'},
       { hid: 'og-type', property: 'og:type', content: 'website' },
       { hid: 'og-title', property: 'og:title', content: 'Gabriel Caiana - Website' },
       { hid: 'og-desc', property: 'og:description', content: 'Sou desenvolvedor frontend apaixonado por tecnologia, design e inovação digital.' },
-      { hid: 'og-image', property: 'og:image', content: './static/profile.png'},
+      { hid: 'og-image', property: 'og:image', content: '/profile.png'},
       { hid: 'og-url', property: 'og:url', content: 'https://gabrielcaiana.com' } 
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }]
+    link: [
+      {
+        rel: 'canonical',
+        href: 'https://gabrielcaiana.com'
+      },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" }
+    ]
   },
 
   css: ["~/assets/app.css"],

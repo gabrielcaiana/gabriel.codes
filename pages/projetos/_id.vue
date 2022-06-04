@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <pre>{{ project }}</pre>
-    <!-- <div v-if="project"> -->
-      <!-- <div>
+
+    <div v-if="project">
+      <div>
         <p
           class="
             font-general-medium
@@ -189,7 +189,7 @@
 
     <div v-else class="font-general-medium container mx-auto text-center">
       <h1>No projects yet</h1>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -214,6 +214,12 @@ export default {
         { hid: 'og-desc', property: 'og:description', content: this.project?.projectDetails[0].details },
         { hid: 'og-image', property: 'og:image', content: this.project?.projectImages[0].img},
         { hid: 'og-url', property: 'og:url', content: `https://gabrielcaiana.com/projetos/${this.project?.id}` } 
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
       ]
     }
   },
