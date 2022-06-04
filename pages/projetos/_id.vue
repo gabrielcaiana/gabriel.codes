@@ -1,7 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <div v-if="project">
-      <div>
+    <pre>{{ project }}</pre>
+    <!-- <div v-if="project"> -->
+      <!-- <div>
         <p
           class="
             font-general-medium
@@ -188,7 +189,7 @@
 
     <div v-else class="font-general-medium container mx-auto text-center">
       <h1>No projects yet</h1>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -200,6 +201,23 @@ export default {
   scrollToTop: true,
   components: { BaseIcon, AppModal },
 
+  head() {
+    return {
+      title: this.project?.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.project?.projectDetails?.details},
+        { name: 'twitter:title', content: this.project?.title},
+        { name: 'twitter:description', content: this.project?.projectDetails[0].details},
+        { name: 'twitter:image', content: this.project?.projectImages[0].img},  
+        { name: 'twitter:card', content: 'summary_large_image'},
+        { hid: 'og-title', property: 'og:title', content:  this.project?.title},
+        { hid: 'og-desc', property: 'og:description', content: this.project?.projectDetails[0].details },
+        { hid: 'og-image', property: 'og:image', content: this.project?.projectImages[0].img},
+        { hid: 'og-url', property: 'og:url', content: `https://gabrielcaiana.com/projetos/${this.project?.id}` } 
+      ]
+    }
+  },
+
   data: () => ({
     dialogImage: null,
   }),
@@ -208,6 +226,10 @@ export default {
     project() {
       return this.$store.getters.getProjectById(this.$route.params.id);
     },
+  },
+
+  mounted() {
+    console.log(this)
   },
 
   methods: {
