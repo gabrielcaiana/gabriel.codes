@@ -61,13 +61,13 @@ export default {
 }
 
 .fade-enter-active {
-  animation: coming 0.4s;
+  animation: coming 0.5s;
   animation-delay: 0.2s;
   opacity: 0;
 }
 
 .fade-leave-active {
-  animation: going 0.4s;
+  animation: going 0.5s;
 }
 
 @keyframes going {
