@@ -2,18 +2,6 @@
   <div
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
-    <div v-if="headerVersion" class="w-full bg-green-500">
-      <p class="text-white text-center">
-        Você está visualizando a nova versão do meu site, caso deseje visitar a
-        antiga
-        <a
-          class="underline-offset-1 font-bold"
-          href="https://v1.gabrielcaiana.com"
-          >clique aqui</a
-        >
-      </p>
-    </div>
-
     <AppHeader />
 
     <transition name="fade" mode="out-in">
