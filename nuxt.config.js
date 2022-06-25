@@ -47,8 +47,8 @@ export default {
 
   pwa: {
     manifest: {
-      name: "Gabriel Caiana",
-      short_name: "Gabriel",
+      name: "Gabriel Caiana Guedes | Website",
+      short_name: "Gabriel | Website",
       lang: "pt-BR",
     },
   },
