@@ -197,6 +197,8 @@
 import BaseIcon from "@/components/reusable/BaseIcon.vue";
 import AppModal from "@/components/shared/AppModal.vue";
 
+import socialMeta from '@/utils/social-meta'
+
 export default {
   scrollToTop: true,
   components: { BaseIcon, AppModal },
@@ -204,17 +206,7 @@ export default {
   head() {
     return {
       title: this.project?.title,
-      meta: [
-        { hid: 'description', name: 'description', content: this.project?.projectDetails?.details},
-        { name: 'twitter:title', content: this.project?.title},
-        { name: 'twitter:description', content: this.project?.projectDetails[0].details},
-        { name: 'twitter:image', content: this.project?.projectImages[0].img},  
-        { name: 'twitter:card', content: 'summary_large_image'},
-        { hid: 'og-title', property: 'og:title', content:  this.project?.title},
-        { hid: 'og-desc', property: 'og:description', content: this.project?.projectDetails[0].details },
-        { hid: 'og-image', property: 'og:image', content: this.project?.projectImages[0].img},
-        { hid: 'og-url', property: 'og:url', content: `https://gabrielcaiana.com/projetos/${this.project?.id}` } 
-      ],
+      meta: [...this.meta],
       link: [
         {
           rel: 'canonical',
@@ -229,13 +221,20 @@ export default {
   }),
 
   computed: {
+    meta() {
+      const data = {
+        title: this.project?.title,
+        description: this.project?.projectDetails[0].details,
+        img: this.project?.projectImages[0].img,
+        url: `https://gabrielcaiana.com/projetos/${this.project?.id}`
+      }
+
+      return socialMeta(data)
+    },
+  
     project() {
       return this.$store.getters.getProjectById(this.$route.params.id);
     },
-  },
-
-  mounted() {
-    console.log(this)
   },
 
   methods: {
