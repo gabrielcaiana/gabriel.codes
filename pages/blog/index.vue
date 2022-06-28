@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  scrollToTop: true,
   head() {
     return {
       title: 'Blog',

@@ -8,17 +8,12 @@
     "
   >
     <ContactForm />
-
     <ContactDetails :contacts="contacts" />
   </div>
 </template>
 
 <script>
-import feather from "feather-icons";
-
 export default {
-  scrollToTop: true,
-
   head() {
     return {
       title: 'Contato',
@@ -54,12 +49,6 @@ export default {
         },
       ],
     };
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
 };
 </script>

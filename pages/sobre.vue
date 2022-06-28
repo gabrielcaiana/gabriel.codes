@@ -6,11 +6,8 @@
 </template>
 
 <script>
-import feather from "feather-icons";
-
 export default {
   name: "About",
-  scrollToTop: true,
   head() {
     return {
       title: 'Sobre',
@@ -24,12 +21,6 @@ export default {
         }
       ]
     }
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
+  }
 };
 </script>

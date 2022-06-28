@@ -196,11 +196,9 @@
 <script>
 import BaseIcon from "@/components/reusable/BaseIcon.vue";
 import AppModal from "@/components/shared/AppModal.vue";
-
 import socialMeta from '@/utils/social-meta'
 
 export default {
-  scrollToTop: true,
   components: { BaseIcon, AppModal },
 
   head() {
