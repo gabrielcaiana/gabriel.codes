@@ -33,6 +33,6 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'AppHome'
 };
 </script>

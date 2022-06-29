@@ -13,9 +13,9 @@
     </p>
     <div class="grid grid-cols-2 sm:grid-cols-6 mt-10 sm:mt-14 gap-2">
       <AboutClientSingle
-        class="client"
         v-for="client in clients"
         :key="client.id"
+        class="client"
         :client="client"
       />
     </div>

@@ -114,8 +114,8 @@
           py-2
           mt-2
         "
-        @click="showModal()"
         aria-label="Fale comigo Button"
+        @click="showModal()"
       >
         Fale comigo
       </button>
@@ -125,7 +125,24 @@
 
 <script>
 export default {
-  props: ["isOpen", "showModal", "modal", "categories"],
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    },
+    showModal: {
+      type: Function,
+      default: () => false
+    },
+    modal: {
+      type: Boolean,
+      default: false
+    },
+    categories: {
+      type: Object,
+      default: () => {}
+    }
+  }
 };
 </script>
 

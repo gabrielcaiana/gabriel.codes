@@ -3,7 +3,6 @@
     <div v-show="modal" class="font-general-regular fixed inset-0 z-30">
       <div
         v-show="modal"
-        @click="showModal()"
         class="
           bg-filter bg-black bg-opacity-50
           fixed
@@ -12,6 +11,7 @@
           h-full
           z-20
         "
+        @click="showModal()"
       ></div>
       <main class="flex flex-col items-center justify-center h-full w-full">
         <transition name="fade-up-down">
@@ -57,11 +57,13 @@
               <div class="modal-body p-5 w-full h-full">
                 <form
                   ref="form"
-                  @submit.prevent="sendForm"
                   class="max-w-xl m-4 text-left"
+                  @submit.prevent="sendForm"
                 >
                   <div class="mt-0">
                     <input
+                      id="user_name"
+                      v-model="form.name"
                       class="
                         w-full
                         px-5
@@ -75,8 +77,6 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      v-model="form.name"
-                      id="user_name"
                       name="user_name"
                       type="text"
                       required=""
@@ -86,6 +86,8 @@
                   </div>
                   <div class="mt-6">
                     <input
+                      id="user_email"
+                      v-model="form.email"
                       class="
                         w-full
                         px-5
@@ -99,8 +101,6 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      v-model="form.email"
-                      id="user_email"
                       name="user_email"
                       type="text"
                       required=""
@@ -110,6 +110,8 @@
                   </div>
                   <div class="mt-6">
                     <select
+                      id="user_category"
+                      v-model="form.category"
                       class="
                         w-full
                         px-5
@@ -123,8 +125,6 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      v-model="form.category"
-                      id="user_category"
                       name="user_category"
                       type="text"
                       required=""
@@ -143,6 +143,8 @@
 
                   <div class="mt-6">
                     <textarea
+                      id="message"
+                      v-model="form.message"
                       class="
                         w-full
                         px-5
@@ -156,8 +158,6 @@
                         text-primary-dark
                         dark:text-ternary-light
                       "
-                      v-model="form.message"
-                      id="message"
                       name="message"
                       cols="14"
                       rows="6"
@@ -200,7 +200,20 @@ import emailjs from "@emailjs/browser";
 
 export default {
   name: 'HireMeModal',
-  props: ["showModal", "modal", "categories"],
+   props: {
+    showModal: {
+      type: Function,
+      default: () => false
+    },
+    modal: {
+      type: Boolean,
+      default: false
+    },
+    categories: {
+      type: Object,
+      default: () => {}
+    }
+  },
   data: () => {
     return {
       form: {
@@ -217,6 +230,7 @@ export default {
 
       try {
         this.$nuxt.$loading.start();
+        // eslint-disable-next-line import/no-named-as-default-member
         const result = await emailjs.sendForm(
           serviceId,
           templateId2,

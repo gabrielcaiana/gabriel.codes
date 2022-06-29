@@ -14,7 +14,7 @@
         <div>
           <NuxtLink to="/">
             <img
-              v-if="this.$colorMode.value == 'dark'"
+              v-if="$colorMode.value == 'dark'"
               src="~/static/logo-light.svg"
               class="w-36"
               alt="Light Logo"
@@ -30,7 +30,6 @@
         </div>
 
         <button
-          @click="themeSwitcher"
           class="
             sm:hidden
             ml-8
@@ -43,6 +42,7 @@
             rounded-xl
             cursor-pointer
           "
+          @click="themeSwitcher"
         >
           <svg
             v-if="$colorMode.value == 'light'"
@@ -85,10 +85,10 @@
 
         <div class="sm:hidden">
           <button
-            @click="isOpen = !isOpen"
             type="button"
             class="focus:outline-none"
             aria-label="Hamburger Menu"
+            @click="isOpen = !isOpen"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +119,8 @@
       </div>
 
       <AppNavigation
-        :isOpen="isOpen"
-        :showModal="showModal"
+        :is-open="isOpen"
+        :show-modal="showModal"
         :modal="modal"
         :categories="categories"
       />
@@ -140,15 +140,14 @@
               px-5
               py-2.5
             "
-            @click="showModal()"
             aria-label="Fale comigo Button"
+            @click="showModal()"
           >
             Fale comigo
           </button>
         </div>
 
         <button
-          @click="themeSwitcher"
           class="
             sm:ml-6
             bg-primary-light
@@ -159,6 +158,7 @@
             rounded-lg
             cursor-pointer
           "
+          @click="themeSwitcher"
         >
           <svg
             v-if="$colorMode.value == 'light'"
@@ -202,7 +202,7 @@
     </div>
 
     <HireMeModal
-      :showModal="showModal"
+      :show-modal="showModal"
       :modal="modal"
       :categories="categories"
       aria-modal="Fale comigo Modal"
@@ -228,7 +228,7 @@ export default {
   methods: {
     themeSwitcher() {
       this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
+        this.$colorMode.value === "light" ? "dark" : "light";
     },
     showModal() {
       if (this.modal) {

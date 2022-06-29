@@ -1,8 +1,7 @@
 <template>
   <select
-    @change="$emit('change', $event.target.value)"
-    :name="select"
     :id="select"
+    :name="select"
     class="
       font-general-medium
       px-4
@@ -17,6 +16,7 @@
       text-primary-dark
       dark:text-ternary-light
     "
+    @change="$emit('change', $event.target.value)"
   >
     <option value class="text-sm sm:text-md">Todos projetos</option>
     <option
