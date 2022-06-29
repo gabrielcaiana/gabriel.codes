@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import feather from "feather-icons";
+import feather from 'feather-icons'
 
 export default {
-  name: "BaseIcon",
+  name: 'BaseIcon',
   props: {
     name: {
       type: String,
@@ -19,15 +19,15 @@ export default {
     },
     size: {
       type: String,
-      default: "24",
+      default: '24',
     },
   },
 
   mounted() {
-    feather.replace();
+    feather.replace()
   },
   updated() {
-    feather.replace();
+    feather.replace()
   },
-};
+}
 </script>

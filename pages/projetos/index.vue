@@ -6,19 +6,24 @@
 
 <script>
 export default {
+  name: 'AppProjects',
   head() {
     return {
       title: 'Projetos',
       meta: [
-        { hid: 'description', name: 'description', content: 'veja alguns dos projetos que já desenvolvi'},
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'veja alguns dos projetos que já desenvolvi',
+        },
       ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://gabrielcaiana.com' + this.$route.path
-        }
-      ]
+          href: 'https://gabrielcaiana.com' + this.$route.path,
+        },
+      ],
     }
   },
-};
+}
 </script>

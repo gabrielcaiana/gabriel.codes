@@ -1,20 +1,13 @@
 <template>
   <nav id="nav" class="sm:container sm:mx-auto">
     <div
-      class="
-        z-10
-        max-w-screen-lg
-        xl:max-w-screen-xl
-        block
-        sm:flex sm:justify-between sm:items-center
-        py-6
-      "
+      class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6"
     >
       <div class="flex justify-between items-center px-6 sm:px-0">
         <div>
           <NuxtLink to="/">
             <img
-              v-if="this.$colorMode.value == 'dark'"
+              v-if="$colorMode.value == 'dark'"
               src="~/static/logo-light.svg"
               class="w-36"
               alt="Light Logo"
@@ -30,31 +23,13 @@
         </div>
 
         <button
+          class="sm:hidden ml-8 bg-primary-light dark:bg-ternary-dark px-2 py-1.5 sm:px-3 sm:py-2 shadow-sm rounded-xl cursor-pointer"
           @click="themeSwitcher"
-          class="
-            sm:hidden
-            ml-8
-            bg-primary-light
-            dark:bg-ternary-dark
-            px-2
-            py-1.5
-            sm:px-3 sm:py-2
-            shadow-sm
-            rounded-xl
-            cursor-pointer
-          "
         >
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              text-liText-ternary-dark
-              hover:text-gray-400
-              dark:text-liText-ternary-light
-              dark:hover:text-liBorder-primary-light
-              w-6
-              h-6
-            "
+            class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -85,22 +60,15 @@
 
         <div class="sm:hidden">
           <button
-            @click="isOpen = !isOpen"
             type="button"
             class="focus:outline-none"
             aria-label="Hamburger Menu"
+            @click="isOpen = !isOpen"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              class="
-                h-7
-                w-7
-                mt-1
-                fill-current
-                text-secondary-dark
-                dark:text-ternary-light
-              "
+              class="h-7 w-7 mt-1 fill-current text-secondary-dark dark:text-ternary-light"
             >
               <path
                 v-if="isOpen"
@@ -119,8 +87,8 @@
       </div>
 
       <AppNavigation
-        :isOpen="isOpen"
-        :showModal="showModal"
+        :is-open="isOpen"
+        :show-modal="showModal"
         :modal="modal"
         :categories="categories"
       />
@@ -130,47 +98,22 @@
       >
         <div class="font-general-medium hidden md:block">
           <button
-            class="
-              text-md
-              bg-green-400
-              hover:bg-green-500
-              text-white
-              shadow-sm
-              rounded-md
-              px-5
-              py-2.5
-            "
-            @click="showModal()"
+            class="text-md bg-green-400 hover:bg-green-500 text-white shadow-sm rounded-md px-5 py-2.5"
             aria-label="Fale comigo Button"
+            @click="showModal()"
           >
             Fale comigo
           </button>
         </div>
 
         <button
+          class="sm:ml-6 bg-primary-light dark:bg-ternary-dark px-2 py-2 shadow-sm rounded-lg cursor-pointer"
           @click="themeSwitcher"
-          class="
-            sm:ml-6
-            bg-primary-light
-            dark:bg-ternary-dark
-            px-2
-            py-2
-            shadow-sm
-            rounded-lg
-            cursor-pointer
-          "
         >
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              text-liText-ternary-dark
-              hover:text-gray-400
-              dark:text-liText-ternary-light
-              dark:hover:text-liBorder-primary-light
-              w-6
-              h-6
-            "
+            class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -202,7 +145,7 @@
     </div>
 
     <HireMeModal
-      :showModal="showModal"
+      :show-modal="showModal"
       :modal="modal"
       :categories="categories"
       aria-modal="Fale comigo Modal"
@@ -211,7 +154,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   name: 'AppHeader',
@@ -219,30 +162,30 @@ export default {
     return {
       isOpen: false,
       modal: false,
-    };
+    }
   },
 
   computed: {
-    ...mapState(["categories"]),
+    ...mapState(['categories']),
   },
   methods: {
     themeSwitcher() {
       this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
     },
     showModal() {
       if (this.modal) {
         document
-          .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
+          .getElementsByTagName('html')[0]
+          .classList.remove('overflow-y-hidden')
+        this.modal = false
       } else {
         document
-          .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
+          .getElementsByTagName('html')[0]
+          .classList.add('overflow-y-hidden')
+        this.modal = true
       }
     },
   },
-};
+}
 </script>

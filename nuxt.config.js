@@ -3,7 +3,7 @@ import getSocialMeta from './utils/social-meta'
 const meta = getSocialMeta()
 
 export default {
-  target: "static",
+  target: 'static',
 
   head: {
     titleTemplate: '%s | Website',
@@ -17,39 +17,43 @@ export default {
     link: [
       {
         rel: 'canonical',
-        href: global.siteURL
+        href: global.siteURL,
       },
-      { rel: "icon", type: "image/x-icon", href: "/favicon.png" }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+    ],
   },
   colorMode: {
-    classSuffix: "",
+    classSuffix: '',
   },
 
   env: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.BASE_URL,
   },
 
-  css: ["~/assets/app.css"],
+  css: ['~/assets/app.css'],
 
   components: [{ path: '@/components', pathPrefix: false }],
 
-  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/eslint-module',
+  ],
 
   loading: {
-    color: "green",
-    height: "5px",
-    failedColor: "red",
+    color: 'green',
+    height: '5px',
+    failedColor: 'red',
     continuous: true,
   },
 
-  modules: ["@nuxtjs/pwa"],
+  modules: ['@nuxtjs/pwa'],
 
   pwa: {
     manifest: {
-      name: "Gabriel Caiana",
-      short_name: "Gabriel | Website",
-      lang: "pt-BR",
+      name: 'Gabriel Caiana',
+      short_name: 'Gabriel | Website',
+      lang: 'pt-BR',
     },
   },
 
@@ -61,4 +65,4 @@ export default {
       serviceId: process.env.VUE_EMAILJS_SERVICE_ID,
     },
   },
-};
+}

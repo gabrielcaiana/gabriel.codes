@@ -9,8 +9,8 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Obrigado por reportar o problema, vamos analisar o mais breve possível"
-        pr-message: "Ficamos muito feliz por ver voce contribuindo com o projeto!"
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: 'Obrigado por reportar o problema, vamos analisar o mais breve possível'
+          pr-message: 'Ficamos muito feliz por ver voce contribuindo com o projeto!'

@@ -5,19 +5,14 @@
     </div>
     <div class="w-full sm:w-3/4 text-left">
       <p
-        class="
-          font-general-regular
-          mb-4
-          text-ternary-dark
-          dark:text-ternary-light
-          text-lg
-        "
+        class="font-general-regular mb-4 text-ternary-dark dark:text-ternary-light text-lg"
       >
-        Sou um desenvolvedor de software de 25 anos, trabalho com tecnologias como
-        (Javascript, Typescript, Vue, Nuxt, Vuex, Pinia, Jest, GraphQL, Storybook,
-        Vite, Vuetify, Tailwind, Node, Cypress), amo construir aplicações web utilizando
-        o ecosistema do VueJS, sempre focado em entregar uma boa experiência para os
-        usuários seguindo as melhores práticas de UI/UX.
+        Sou um desenvolvedor de software de 25 anos, trabalho com tecnologias
+        como (Javascript, Typescript, Vue, Nuxt, Vuex, Pinia, Jest, GraphQL,
+        Storybook, Vite, Vuetify, Tailwind, Node, Cypress), amo construir
+        aplicações web utilizando o ecosistema do VueJS, sempre focado em
+        entregar uma boa experiência para os usuários seguindo as melhores
+        práticas de UI/UX.
       </p>
     </div>
   </div>
@@ -26,5 +21,5 @@
 <script>
 export default {
   name: 'AboutMe',
-};
+}
 </script>

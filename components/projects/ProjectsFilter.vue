@@ -1,22 +1,9 @@
 <template>
   <select
-    @change="$emit('change', $event.target.value)"
-    :name="select"
     :id="select"
-    class="
-      font-general-medium
-      px-4
-      py-2
-      border-1 border-gray-200
-      dark:border-secondary-dark
-      rounded-lg
-      text-sm
-      sm:text-md
-      bg-secondary-light
-      dark:bg-ternary-dark
-      text-primary-dark
-      dark:text-ternary-light
-    "
+    :name="select"
+    class="font-general-medium px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+    @change="$emit('change', $event.target.value)"
   >
     <option value class="text-sm sm:text-md">Todos projetos</option>
     <option
@@ -35,12 +22,12 @@ export default {
   props: {
     select: {
       type: String,
-      default: "projects",
+      default: 'projects',
     },
     selectOptions: {
       type: Array,
       default: () => [],
     },
   },
-};
+}
 </script>
