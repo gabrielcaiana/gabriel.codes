@@ -32,7 +32,7 @@ export default {
 
   css: ["~/assets/app.css"],
 
-  components: true,
+  components: [{ path: '@/components', pathPrefix: false }],
 
   buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
 

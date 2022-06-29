@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: 'AboutClientSingle',
   props: ["client"],
 };
 </script>

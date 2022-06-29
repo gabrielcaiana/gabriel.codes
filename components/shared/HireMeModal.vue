@@ -196,13 +196,11 @@
 </template>
 
 <script>
-import Button from "../reusable/Button.vue";
 import emailjs from "@emailjs/browser";
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
 
 export default {
+  name: 'HireMeModal',
   props: ["showModal", "modal", "categories"],
-  components: { Button, BaseIcon },
   data: () => {
     return {
       form: {

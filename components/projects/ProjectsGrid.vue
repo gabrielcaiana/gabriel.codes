@@ -144,12 +144,8 @@
 
 <script>
 import { mapState } from "vuex";
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
 export default {
   name: 'ProjectsGrid',
-  components: {
-    BaseIcon,
-  },
   data: () => {
     return {
       selectedProject: "",

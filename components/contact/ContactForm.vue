@@ -179,9 +179,8 @@
 
 <script>
 import emailjs from "@emailjs/browser";
-import Button from "../reusable/Button.vue";
 export default {
-  components: { Button },
+  name: 'ContactForm',
   data: () => {
     return {
       form: {

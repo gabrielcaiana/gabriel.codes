@@ -212,14 +212,9 @@
 
 <script>
 import { mapState } from "vuex";
-import HireMeModal from "../shared/HireMeModal.vue";
-import AppNavigation from "./AppNavigation.vue";
 
 export default {
-  components: {
-    HireMeModal,
-    AppNavigation,
-  },
+  name: 'AppHeader',
   data: () => {
     return {
       isOpen: false,

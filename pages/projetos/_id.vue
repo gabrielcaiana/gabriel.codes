@@ -194,13 +194,8 @@
 </template>
 
 <script>
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
-import AppModal from "@/components/shared/AppModal.vue";
 import socialMeta from '@/utils/social-meta'
-
 export default {
-  components: { BaseIcon, AppModal },
-
   head() {
     return {
       title: this.project?.title,

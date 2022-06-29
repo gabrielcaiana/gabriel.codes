@@ -40,6 +40,6 @@
 
 <script>
 export default {
-  name: 'ProjectsGrid',
+  name: 'FooterCopyright'
 };
 </script>

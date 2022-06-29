@@ -32,9 +32,7 @@
 </template>
 
 <script>
-import AppBanner from "../components/shared/AppBanner.vue";
-import Button from "../components/reusable/Button.vue";
 export default {
-  components: { AppBanner, Button },
+  name: 'Home'
 };
 </script>

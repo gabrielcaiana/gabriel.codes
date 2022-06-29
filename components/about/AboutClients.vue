@@ -25,6 +25,7 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  name: 'AboutClients',
   computed: {
     ...mapState(["clientsHeading", "clients"]),
   },

@@ -38,12 +38,8 @@
 </template>
 
 <script>
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
-
 export default {
-  components: {
-    BaseIcon,
-  },
+  name: 'ContactDetails',
   props: ["contacts"],
 };
 </script>

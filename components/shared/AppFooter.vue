@@ -55,11 +55,9 @@
 
 <script>
 import { mapState } from "vuex";
-import FooterCopyright from "./FooterCopyright.vue";
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
 
 export default {
-  components: { FooterCopyright, BaseIcon },
+  name: 'AppFooter',
   computed: {
     ...mapState(["copyrightDate", "socialProfiles"]),
   },

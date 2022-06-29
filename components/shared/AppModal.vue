@@ -30,13 +30,8 @@
 </template>
 
 <script>
-import BaseIcon from "@/components/reusable/BaseIcon.vue";
 export default {
   name: "AppModal",
-
-  components: {
-    BaseIcon,
-  },
 
   data() {
     return {
