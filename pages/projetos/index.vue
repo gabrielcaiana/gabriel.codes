@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'AppProjects',
   head() {
     return {
       title: 'Projetos',

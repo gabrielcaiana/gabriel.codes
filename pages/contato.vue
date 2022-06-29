@@ -14,21 +14,7 @@
 
 <script>
 export default {
-  head() {
-    return {
-      title: 'Contato',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Fale comigo por email ou por alguma rede social'},
-      ],
-    link: [
-        {
-          rel: 'canonical',
-          href: 'https://gabrielcaiana.com' + this.$route.path
-        }
-      ]
-    }
-  },
-
+  name: 'AppContact',
   data: () => {
     return {
       contacts: [
@@ -49,6 +35,20 @@ export default {
         },
       ],
     };
+  },
+  head() {
+    return {
+      title: 'Contato',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Fale comigo por email ou por alguma rede social'},
+      ],
+    link: [
+        {
+          rel: 'canonical',
+          href: 'https://gabrielcaiana.com' + this.$route.path
+        }
+      ]
+    }
   },
 };
 </script>

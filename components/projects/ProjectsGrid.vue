@@ -59,6 +59,7 @@
             />
           </span>
           <input
+            id="name"
             v-model="searchProject"
             class="
               font-general-medium
@@ -76,7 +77,6 @@
               text-primary-dark
               dark:text-ternary-light
             "
-            id="name"
             name="name"
             type="search"
             required=""
@@ -85,8 +85,8 @@
           />
         </div>
         <ProjectsFilter
+          :select-options="categories"
           @change="selectedProject = $event"
-          :selectOptions="categories"
         />
       </div>
     </div>
@@ -173,13 +173,13 @@ export default {
   methods: {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
-        let category =
+        const category =
           item.category.charAt(0).toUpperCase() + item.category.slice(1);
         return category.includes(this.selectedProject);
       });
     },
     filterProjectsBySearch() {
-      let project = new RegExp(this.searchProject, "i");
+      const project = new RegExp(this.searchProject, "i");
       return this.projects.filter((el) => el.title.match(project));
     },
   },

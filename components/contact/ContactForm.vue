@@ -26,8 +26,8 @@
       </p>
       <form
         ref="form"
-        @submit.prevent="sendForm"
         class="font-general-regular space-y-7"
+        @submit.prevent="sendForm"
       >
         <div class="">
           <label
@@ -36,6 +36,8 @@
             >Nome</label
           >
           <input
+            id="user_name"
+            v-model="form.name"
             class="
               w-full
               px-5
@@ -51,8 +53,6 @@
               shadow-sm
               text-md
             "
-            v-model="form.name"
-            id="user_name"
             name="user_name"
             type="text"
             required=""
@@ -67,6 +67,8 @@
             >Email</label
           >
           <input
+            id="user_email"
+            v-model="form.email"
             class="
               w-full
               px-5
@@ -82,8 +84,6 @@
               shadow-sm
               text-md
             "
-            v-model="form.email"
-            id="user_email"
             name="user_email"
             type="text"
             required=""
@@ -98,6 +98,8 @@
             >Assunto</label
           >
           <input
+            id="user_subject"
+            v-model="form.subject"
             class="
               w-full
               px-5
@@ -113,8 +115,6 @@
               shadow-sm
               text-md
             "
-            v-model="form.subject"
-            id="user_subject"
             name="user_subject"
             type="text"
             required=""
@@ -130,6 +130,8 @@
             >Mensagem</label
           >
           <textarea
+            id="message"
+            v-model="form.message"
             class="
               w-full
               px-5
@@ -145,8 +147,6 @@
               shadow-sm
               text-md
             "
-            v-model="form.message"
-            id="message"
             name="message"
             cols="14"
             rows="6"
@@ -198,6 +198,7 @@ export default {
 
       try {
         this.$nuxt.$loading.start();
+        // eslint-disable-next-line import/no-named-as-default-member
         const result = await emailjs.sendForm(
           serviceId,
           templateId1,

@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'AppBlog',
   head() {
     return {
       title: 'Blog',

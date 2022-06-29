@@ -13,7 +13,7 @@
         Informações de contato
       </h2>
       <ul class="font-general-regular">
-        <li class="flex" v-for="contact in contacts" :key="contact.id">
+        <li v-for="contact in contacts" :key="contact.id" class="flex">
           <BaseIcon
             :name="contact.icon"
             class="w-5 text-gray-500 dark:text-gray-400 mr-4"
@@ -40,6 +40,11 @@
 <script>
 export default {
   name: 'ContactDetails',
-  props: ["contacts"],
+  props: {
+    contacts: {
+      type: Array,
+      required: true
+    }
+  },
 };
 </script>

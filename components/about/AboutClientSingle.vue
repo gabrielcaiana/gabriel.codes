@@ -22,6 +22,11 @@
 <script>
 export default {
   name: 'AboutClientSingle',
-  props: ["client"],
+  props: {
+    client: {
+      type: Object,
+      required: true
+    }
+  },
 };
 </script>

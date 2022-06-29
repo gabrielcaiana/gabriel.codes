@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "About",
+  name: "AppAbout",
   head() {
     return {
       title: 'Sobre',
