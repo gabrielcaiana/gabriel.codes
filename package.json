@@ -9,6 +9,13 @@
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielcaiana/gabriel.codes"
+  },
+  "keywords": [
+    "Gabriel Caiana"
+  ],
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "@tailwindcss/forms": "^0.3.4",
