@@ -196,7 +196,7 @@
 </template>
 
 <script>
-import Button from "./reusable/Button.vue";
+import Button from "../reusable/Button.vue";
 import emailjs from "@emailjs/browser";
 import BaseIcon from "@/components/reusable/BaseIcon.vue";
 

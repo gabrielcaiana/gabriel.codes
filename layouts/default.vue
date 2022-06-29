@@ -33,7 +33,7 @@
 import feather from "feather-icons";
 import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
-import BackToTop from "../components/BackToTop.vue";
+import BackToTop from "../components/shared/BackToTop.vue";
 export default {
   components: { AppFooter, BackToTop, AppHeader },
   computed: {

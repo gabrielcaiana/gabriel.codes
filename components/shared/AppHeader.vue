@@ -212,7 +212,7 @@
 
 <script>
 import { mapState } from "vuex";
-import HireMeModal from "../HireMeModal.vue";
+import HireMeModal from "../shared/HireMeModal.vue";
 import AppNavigation from "./AppNavigation.vue";
 
 export default {
