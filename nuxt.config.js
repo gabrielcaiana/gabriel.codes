@@ -34,7 +34,7 @@ export default {
 
   components: [{ path: '@/components', pathPrefix: false }],
 
-  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", '@nuxtjs/eslint-module'],
 
   loading: {
     color: "green",
