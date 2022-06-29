@@ -11,7 +11,8 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:js && yarn lint:prettier",
-    "lintfix": "prettier --write --list-different . && yarn lint:js --fix"
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -30,17 +31,20 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@nuxtjs/color-mode": "^2.1.1",
-    "@nuxtjs/tailwindcss": "^4.2.0",
-    "postcss": "^8.3.5",
+    "@nuxtjs/eslint-config": "^8.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/pwa": "^3.3.5",
-    "prettier": "^2.5.1",
+    "@nuxtjs/tailwindcss": "^4.2.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@nuxtjs/eslint-config": "^8.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2"
+    "husky": "^8.0.1",
+    "postcss": "^8.3.5",
+    "prettier": "^2.5.1"
   }
 }
