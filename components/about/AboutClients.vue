@@ -9,7 +9,7 @@
         dark:text-primary-light
       "
     >
-      {{ clientsHeading }}
+    Algumas das empresas com quem trabalhei
     </p>
     <div class="grid grid-cols-2 sm:grid-cols-6 mt-10 sm:mt-14 gap-2">
       <AboutClientSingle

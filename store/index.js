@@ -1,8 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const state = () => ({
-  projectsHeading: "Projetos",
-  projectsDescription: "Alguns dos projetos que concluí com sucesso",
   projects: [
     {
       id: uuidv4(),
@@ -509,7 +507,6 @@ export const state = () => ({
       ],
     },
   ],
-  clientsHeading: "Algumas das empresas com quem trabalhei",
   clients: [
     {
       id: uuidv4(),
@@ -542,13 +539,6 @@ export const state = () => ({
       img: "../brands/freelancer.png",
     },
   ],
-  aboutMe: [
-    {
-      id: uuidv4(),
-      bio: "Sou um desenvolvedor de software de 25 anos, trabalho com tecnologias como (Javascript, Typescript, Vue, Nuxt, Vuex, Pinia, Jest, GraphQL, Storybook, Vite, Vuetify, Tailwind, Node, Cypress), amo construir aplicações web utilizando o ecosistema do VueJS, sempre focado em entregar uma boa experiência para os usuários seguindo as melhores práticas de UI/UX.",
-    },
-  ],
-  copyrightDate: new Date().getFullYear(),
   socialProfiles: [
     {
       id: uuidv4(),

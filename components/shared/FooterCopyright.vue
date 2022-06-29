@@ -7,7 +7,7 @@
         dark:text-ternary-light
       "
     >
-      &copy; {{ copyrightDate }}.
+      &copy; {{ new Date().getFullYear() }}.
       <a
         href="https://github.com/gabrielcaiana"
         target="__blank"
@@ -17,7 +17,7 @@
           dark:hover:text-indigo-300
           duration-500
         "
-        >{{ projectName }}</a
+        >Portfolio</a
       >
       . Developed by
       <a
@@ -32,24 +32,14 @@
           dark:hover:text-indigo-300
           duration-500
         "
-        >{{ author }}</a
+        >Gabriel Caiana</a
       >
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  data: () => {
-    return {
-      projectName: "Portfolio",
-      author: "Gabriel Caiana",
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate"]),
-  },
+  name: 'ProjectsGrid',
 };
 </script>

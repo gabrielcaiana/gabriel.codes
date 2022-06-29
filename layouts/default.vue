@@ -35,20 +35,12 @@ import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
 export default {
-  data: () => {
-    return {};
-  },
-
+  components: { AppFooter, BackToTop, AppHeader },
   computed: {
     headerVersion() {
       return this.$route.name === "index";
     },
   },
-
-  mounted() {
-    feather.replace();
-  },
-  components: { AppFooter, BackToTop, AppHeader },
 };
 </script>
 

@@ -5,8 +5,6 @@
     </div>
     <div class="w-full sm:w-3/4 text-left">
       <p
-        v-for="bio in aboutMe"
-        :key="bio.id"
         class="
           font-general-regular
           mb-4
@@ -15,18 +13,18 @@
           text-lg
         "
       >
-        {{ bio.bio }}
+        Sou um desenvolvedor de software de 25 anos, trabalho com tecnologias como
+        (Javascript, Typescript, Vue, Nuxt, Vuex, Pinia, Jest, GraphQL, Storybook,
+        Vite, Vuetify, Tailwind, Node, Cypress), amo construir aplicações web utilizando
+        o ecosistema do VueJS, sempre focado em entregar uma boa experiência para os
+        usuários seguindo as melhores práticas de UI/UX.
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  computed: {
-    ...mapState(["aboutMe"]),
-  },
+  name: 'AboutMe',
 };
 </script>

@@ -12,7 +12,7 @@
           dark:text-ternary-light
         "
       >
-        {{ projectsHeading }}
+      Projetos
       </p>
     </div>
 
@@ -146,6 +146,7 @@
 import { mapState } from "vuex";
 import BaseIcon from "@/components/reusable/BaseIcon.vue";
 export default {
+  name: 'ProjectsGrid',
   components: {
     BaseIcon,
   },
@@ -157,8 +158,6 @@ export default {
   },
   computed: {
     ...mapState([
-      "projectsHeading",
-      "projectsDescription",
       "projects",
       "categories",
     ]),
