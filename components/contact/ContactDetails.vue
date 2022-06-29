@@ -2,13 +2,7 @@
   <div class="w-full md:w-1/2">
     <div class="text-left max-w-xl px-6">
       <h2
-        class="
-          font-general-medium
-          text-2xl text-primary-dark
-          dark:text-primary-light
-          mt-8
-          mb-8
-        "
+        class="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-8 mb-8"
       >
         Informações de contato
       </h2>
@@ -43,8 +37,8 @@ export default {
   props: {
     contacts: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
-};
+}
 </script>

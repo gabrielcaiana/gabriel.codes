@@ -13,15 +13,19 @@ export default {
     return {
       title: 'Blog',
       meta: [
-        { hid: 'description', name: 'description', content: 'Leia os artigos que já escrevi'},
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Leia os artigos que já escrevi',
+        },
       ],
-    link: [
+      link: [
         {
           rel: 'canonical',
-          href: 'https://gabrielcaiana.com' + this.$route.path
-        }
-      ]
+          href: 'https://gabrielcaiana.com' + this.$route.path,
+        },
+      ],
     }
   },
-};
+}
 </script>
