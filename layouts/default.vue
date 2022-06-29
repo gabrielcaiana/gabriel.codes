@@ -11,18 +11,7 @@
     <AppFooter />
 
     <div
-      class="
-        flex
-        space-x-2
-        mr-8
-        mb-6
-        right-0
-        bottom-0
-        z-50
-        fixed
-        items-center
-        sm:space-x-4
-      "
+      class="flex space-x-2 mr-8 mb-6 right-0 bottom-0 z-50 fixed items-center sm:space-x-4"
     >
       <BackToTop />
     </div>
@@ -31,8 +20,8 @@
 
 <script>
 export default {
-  name: "App",
-};
+  name: 'App',
+}
 </script>
 
 <style>

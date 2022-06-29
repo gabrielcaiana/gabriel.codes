@@ -1,20 +1,9 @@
 <template>
   <div class="container mx-auto">
-
     <div v-if="project">
       <div>
         <p
-          class="
-            font-general-medium
-            text-left text-3xl
-            sm:text-4xl
-            font-bold
-            text-primary-dark
-            dark:text-primary-light
-            mt-14
-            sm:mt-20
-            mb-7
-          "
+          class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
           {{ project.title }}
         </p>
@@ -26,13 +15,7 @@
             />
 
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.publishDate }}</span
             >
           </div>
@@ -42,13 +25,7 @@
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             />
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.tag }}</span
             >
           </div>
@@ -80,21 +57,12 @@
         <div class="w-full sm:w-1/3 text-left">
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.objectivesTitle }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.objectivesDetails }}
             </p>
@@ -102,34 +70,20 @@
 
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.techTitle }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
-              {{ project.technologies.join(", ") }}
+              {{ project.technologies.join(', ') }}
             </p>
           </div>
 
           <div>
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.socialTitle }}
             </p>
@@ -140,17 +94,7 @@
                 :href="social.url"
                 target="__blank"
                 aria-label="Share Project"
-                class="
-                  bg-ternary-light
-                  dark:bg-ternary-dark
-                  text-gray-400
-                  hover:text-primary-dark
-                  dark:hover:text-primary-light
-                  p-2
-                  rounded-lg
-                  shadow-sm
-                  duration-500
-                "
+                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
               >
                 <BaseIcon :name="social.icon" class="w-4 lg:w-5 h-4 lg:h-5" />
               </a>
@@ -160,26 +104,14 @@
 
         <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
-            class="
-              font-general-medium
-              text-primary-dark
-              dark:text-primary-light
-              text-2xl
-              font-bold
-              mb-7
-            "
+            class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
             {{ project.detailsTitle }}
           </p>
           <p
             v-for="projectDetail in project.projectDetails"
             :key="projectDetail.id"
-            class="
-              font-general-regular
-              mb-5
-              text-lg text-ternary-dark
-              dark:text-ternary-light
-            "
+            class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
             {{ projectDetail.details }}
           </p>
@@ -196,7 +128,6 @@
 <script>
 import socialMeta from '@/utils/social-meta'
 export default {
-
   data: () => ({
     dialogImage: null,
   }),
@@ -207,9 +138,9 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://gabrielcaiana.com' + this.$route.path
-        }
-      ]
+          href: 'https://gabrielcaiana.com' + this.$route.path,
+        },
+      ],
     }
   },
 
@@ -219,22 +150,22 @@ export default {
         title: this.project?.title,
         description: this.project?.projectDetails[0].details,
         img: this.project?.projectImages[0].img,
-        url: `https://gabrielcaiana.com/projetos/${this.project?.id}`
+        url: `https://gabrielcaiana.com/projetos/${this.project?.id}`,
       }
 
       return socialMeta(data)
     },
-  
+
     project() {
-      return this.$store.getters.getProjectById(this.$route.params.id);
+      return this.$store.getters.getProjectById(this.$route.params.id)
     },
   },
 
   methods: {
     showProjectImageDialog(image) {
-      this.dialogImage = image;
-      this.$nuxt.$emit("dialogProjectImage");
+      this.dialogImage = image
+      this.$nuxt.$emit('dialogProjectImage')
     },
   },
-};
+}
 </script>
