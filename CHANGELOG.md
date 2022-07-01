@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.1.0...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* update libs" ([c6aad74](https://github.com/gabrielcaiana/gabriel.codes/commit/c6aad74fda85693ac8cb95b34487159d61d2b587))
+
 ## [1.1.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.0.0...v1.1.0) (2022-07-01)
 
 ### Features
