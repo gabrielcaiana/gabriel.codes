@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.0.0...v1.1.0) (2022-07-01)
+
+
+### Features
+
+* atualiza o texto do blog ([f3be27b](https://github.com/gabrielcaiana/gabriel.codes/commit/f3be27b944d9b76ebc46ea96f6141131bfe6febb))
+* run lint ([3d25c34](https://github.com/gabrielcaiana/gabriel.codes/commit/3d25c34430a378b06b0904d0dbda404ac62c2092))
+* update ([4753970](https://github.com/gabrielcaiana/gabriel.codes/commit/4753970275065b35191c2c31bb49b3f8c4534227))
+* update ([96114e4](https://github.com/gabrielcaiana/gabriel.codes/commit/96114e4304ea5cd96b2c515302289fab0407792b))
+* update label ([fc8bd68](https://github.com/gabrielcaiana/gabriel.codes/commit/fc8bd682d47d0b3c0a6721ec94e7f848cee45ced))
+* update text ([6e8a651](https://github.com/gabrielcaiana/gabriel.codes/commit/6e8a651de08803f4d8bca1a1b459f73d4de99e2e))
+* update version ([1af7950](https://github.com/gabrielcaiana/gabriel.codes/commit/1af7950abdf985e4e64123f5fecd53836e7198ed))
+* update version ([3bd85f6](https://github.com/gabrielcaiana/gabriel.codes/commit/3bd85f6f78db8a1d30df2c605294543d13459669))
+
+
+### Bug Fixes
+
+* update version ([938973a](https://github.com/gabrielcaiana/gabriel.codes/commit/938973a1f6d4e60bc4e978ff47c240c70edf1be0))
+
 ## 1.0.0 (2022-06-30)
 
 ### Features
