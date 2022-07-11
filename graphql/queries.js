@@ -46,3 +46,53 @@ export const projectsQuerie = () => gql`
     }
   }
 `
+
+export const projectSlugQuerie = () => gql`
+  query($slug: String, $publicationState: String, $modelName: String) {
+    findSlug(
+      slug: $slug,
+      publicationState: $publicationState,
+      modelName: $modelName,
+    ) {
+      ...on ProjectEntityResponse {
+        data {
+          id
+          attributes {
+            title
+            description
+            categorie
+            objective
+            tag
+            cover {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            links
+            technologies
+            author {
+              data {
+                attributes {
+                  username
+                }
+              }
+            }
+            images {
+              data {
+                id
+                attributes {
+                  url
+                }
+              }
+            }
+            createdAt
+            updatedAt
+            publishedAt
+          }
+        }
+      }
+    }
+  }
+`

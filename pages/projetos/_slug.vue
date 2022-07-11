@@ -16,7 +16,7 @@
 
             <span
               class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.publishDate }}</span
+              >{{ project.createdAt }}</span
             >
           </div>
           <div class="flex items-center">
@@ -34,14 +34,14 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         <div
-          v-for="projectImage in project.projectImages"
+          v-for="projectImage in project.images.data"
           :key="projectImage.id"
           class="mb-10 sm:mb-0"
         >
           <img
-            :src="projectImage.img"
+            :src="`${$config.apiURL}${projectImage.attributes.url}`"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
-            @click="showProjectImageDialog(projectImage.img)"
+            @click="showProjectImageDialog(`${$config.apiURL}${projectImage.attributes.url}`)"
           />
         </div>
       </div>
@@ -59,12 +59,12 @@
             <p
               class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.objectivesTitle }}
+              Objetivo
             </p>
             <p
               class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
-              {{ project.objectivesDetails }}
+              {{ project.objective }}
             </p>
           </div>
 
@@ -72,7 +72,7 @@
             <p
               class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.techTitle }}
+              Tecnologias
             </p>
             <p
               class="font-general-regular text-primary-dark dark:text-ternary-light"
@@ -85,12 +85,12 @@
             <p
               class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.socialTitle }}
+              Links
             </p>
             <div class="flex items-center gap-3 mt-5">
               <a
-                v-for="social in project.socialSharings"
-                :key="social.id"
+                v-for="(social, index) in project.links"
+                :key="index"
                 :href="social.url"
                 target="__blank"
                 aria-label="Share Project"
@@ -106,14 +106,12 @@
           <p
             class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
-            {{ project.detailsTitle }}
+            Descrição
           </p>
           <p
-            v-for="projectDetail in project.projectDetails"
-            :key="projectDetail.id"
             class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
-            {{ projectDetail.details }}
+            {{ project.description }}
           </p>
         </div>
       </div>
@@ -128,6 +126,13 @@
 <script>
 import socialMeta from '@/utils/social-meta'
 export default {
+  async asyncData({ $api, params }) {
+    const project = await $api.getProject(params.slug)
+    return {
+      project: project.attributes,
+    }
+  },
+
   data: () => ({
     dialogImage: null,
   }),
@@ -148,17 +153,13 @@ export default {
     meta() {
       const data = {
         title: this.project?.title,
-        description: this.project?.projectDetails[0].details,
-        img: this.project?.projectImages[0].img,
-        url: `https://gabrielcaiana.com/projetos/${this.project?.id}`,
+        description: this.project?.description,
+        img: `${this.$config.apiURL}${this.project?.images.data[0].attributes.url}`,
+        url: `https://gabrielcaiana.com/projetos/${this.project?.slug}`,
       }
 
       return socialMeta(data)
-    },
-
-    project() {
-      return this.$store.getters.getProjectById(this.$route.params.id)
-    },
+    }
   },
 
   methods: {

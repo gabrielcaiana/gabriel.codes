@@ -51,7 +51,7 @@
         class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
         aria-label="Single Project"
       >
-        <NuxtLink :to="`/projetos/${project.id}`">
+        <NuxtLink :to="`/projetos/${project.attributes.slug}`">
           <div>
             <img
               :src="`${$config.apiURL}${project.attributes.cover.data.attributes.url}`"
