@@ -122,8 +122,8 @@ export default {
       default: false,
     },
     categories: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
   },
   data: () => {

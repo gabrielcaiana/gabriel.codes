@@ -54,8 +54,8 @@
         <NuxtLink :to="`/projetos/${project.id}`">
           <div>
             <img
-              :src="project.img"
-              :alt="project.title"
+              :src="`${$config.apiURL}${project.attributes.cover.data.attributes.url}`"
+              :alt="project.attributes.title"
               class="rounded-t-xl border-none"
             />
           </div>
@@ -63,11 +63,11 @@
             <p
               class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
-              {{ project.title }}
+              {{ project.attributes.title }}
             </p>
             <span
               class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light"
-              >{{ project.category }}</span
+              >{{ project.attributes.categorie }}</span
             >
           </div>
         </NuxtLink>
@@ -80,6 +80,12 @@
 import { mapState } from 'vuex'
 export default {
   name: 'ProjectsGrid',
+  props: {
+    projects: {
+      type: Array,
+      required: true
+    }
+  },
   data: () => {
     return {
       selectedProject: '',
@@ -87,7 +93,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['projects', 'categories']),
+    ...mapState(['categories']),
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory()
@@ -105,13 +111,13 @@ export default {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
         const category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1)
+          item.attributes.categorie.charAt(0).toUpperCase() + item.attributes.categorie.slice(1)
         return category.includes(this.selectedProject)
       })
     },
     filterProjectsBySearch() {
       const project = new RegExp(this.searchProject, 'i')
-      return this.projects.filter((el) => el.title.match(project))
+      return this.projects.filter((el) => el.attributes.title.match(project))
     },
   },
 }

@@ -26,13 +26,11 @@ export default {
     classSuffix: '',
   },
 
-  env: {
-    baseURL: process.env.BASE_URL,
-  },
-
   css: ['~/assets/app.css'],
 
   components: [{ path: '@/components', pathPrefix: false }],
+
+  plugins: ['~/plugins/strapi'],
 
   buildModules: [
     '@nuxtjs/tailwindcss',
@@ -47,7 +45,18 @@ export default {
     continuous: true,
   },
 
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/apollo'],
+
+  apollo: {
+    clientConfigs: {
+      default: '~/graphql/apollo.config.js',
+    },
+    defaultOptions: {
+      query: {
+        fetchPolicy: 'no-cache',
+      },
+    },
+  },
 
   pwa: {
     manifest: {
@@ -58,6 +67,7 @@ export default {
   },
 
   publicRuntimeConfig: {
+    apiURL: process.env.API_URL,
     emailjs: {
       userId: process.env.VUE_EMAILJS_USER_ID,
       templateId1: process.env.VUE_EMAILJS_TEMPLATE1_ID,

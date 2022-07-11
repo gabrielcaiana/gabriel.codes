@@ -120,7 +120,7 @@
     </div>
 
     <div v-else class="font-general-medium container mx-auto text-center">
-      <h1>No projects yet</h1>
+      <h1>Nenhum projeto encontrado</h1>
     </div>
   </div>
 </template>
