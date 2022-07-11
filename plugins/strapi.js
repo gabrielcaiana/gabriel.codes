@@ -5,13 +5,13 @@ export default function ({ app }, inject) {
 
   const getProjects = async () => {
     const { data } = await client.query({
-      query: projectsQuerie()
+      query: projectsQuerie(),
     })
 
-  return data?.projects.data
-}
+    return data?.projects.data
+  }
 
   inject('api', {
-    getProjects
+    getProjects,
   })
 }

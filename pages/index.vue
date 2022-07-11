@@ -23,7 +23,7 @@ export default {
   async asyncData({ $api }) {
     const projects = await $api.getProjects()
     return {
-      projects
+      projects,
     }
   },
 }
