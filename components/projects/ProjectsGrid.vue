@@ -83,8 +83,8 @@ export default {
   props: {
     projects: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data: () => {
     return {
@@ -111,7 +111,8 @@ export default {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
         const category =
-          item.attributes.categorie.charAt(0).toUpperCase() + item.attributes.categorie.slice(1)
+          item.attributes.categorie.charAt(0).toUpperCase() +
+          item.attributes.categorie.slice(1)
         return category.includes(this.selectedProject)
       })
     },
