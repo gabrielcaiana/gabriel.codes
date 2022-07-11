@@ -1,4 +1,5 @@
-import { projectsQuerie, projectSlugQuerie } from '~/graphql/queries'
+import { projectsQuerie, projectSlugQuerie } from '~/graphql/projects/queries'
+import { ExperiencesQuerie } from '~/graphql/experiences/queries'
 
 export default function ({ app }, inject) {
   const client = app.apolloProvider.defaultClient
@@ -24,8 +25,17 @@ export default function ({ app }, inject) {
     return data?.findSlug.data
   }
 
+  const getExperiences = async () => {
+    const { data } = await client.query({
+      query: ExperiencesQuerie(),
+    })
+
+    return data?.experiences.data
+  }
+
   inject('api', {
     getProjects,
-    getProject
+    getProject,
+    getExperiences
   })
 }
