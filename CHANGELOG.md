@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.2.0...v1.3.0) (2022-07-12)
+
+
+### Features
+
+* adiciona o endpoint de categorias ([ee7341b](https://github.com/gabrielcaiana/gabriel.codes/commit/ee7341b6adda0bfeae0af3b358b71ca1314e8a16))
+* adiciona o endpoint de experiencias ([424f991](https://github.com/gabrielcaiana/gabriel.codes/commit/424f991de9bc1a51fa87e1adc392ee0868e3aeba))
+* busca a api os projetos para listar na home do site ([a7aded8](https://github.com/gabrielcaiana/gabriel.codes/commit/a7aded80b6065318d34fff1cdd95afe332b9529e))
+* conecta o endpoint de categorias ([2473ba8](https://github.com/gabrielcaiana/gabriel.codes/commit/2473ba8bb1769e0b6831cfff8657b273d28b7c77))
+* configura o strapi para recuperar os projetos cadastrados na api ([08e808f](https://github.com/gabrielcaiana/gabriel.codes/commit/08e808f5a4b4085613526882b6f2d74b4850f72f))
+* formata a data de criacao do projeto ([0cf0b03](https://github.com/gabrielcaiana/gabriel.codes/commit/0cf0b034d841afc45a6216507c344e74400d9d38))
+
 ## [1.2.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.1.0...v1.2.0) (2022-07-01)
 
 ### Features
