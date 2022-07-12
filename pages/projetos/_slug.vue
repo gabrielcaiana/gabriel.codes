@@ -16,7 +16,7 @@
 
             <span
               class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.createdAt }}</span
+              >{{ shortDate(project.createdAt) }}</span
             >
           </div>
           <div class="flex items-center">
@@ -125,6 +125,7 @@
 
 <script>
 import socialMeta from '@/utils/social-meta'
+import { shortDate } from '@/utils/shortDate'
 export default {
   async asyncData({ $api, params }) {
     const project = await $api.getProject(params.slug)
@@ -163,6 +164,7 @@ export default {
   },
 
   methods: {
+    shortDate,
     showProjectImageDialog(image) {
       this.dialogImage = image
       this.$nuxt.$emit('dialogProjectImage')
