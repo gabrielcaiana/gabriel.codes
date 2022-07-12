@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'ProjectsGrid',
   props: {
@@ -89,10 +90,13 @@ export default {
     return {
       selectedProject: '',
       searchProject: '',
-      categories: []
     }
   },
   computed: {
+     ...mapGetters({
+      categories: 'categories/getCategories',
+    }),
+    
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory()
@@ -105,11 +109,6 @@ export default {
       }
       return this.projects
     },
-  },
-
-  async mounted() {
-    const categories = await this.$api.getCategories()
-    this.categories = categories
   },
 
   methods: {

@@ -21,6 +21,12 @@
 <script>
 export default {
   name: 'LayoutDefault',
+  
+  async mounted() {
+    const categories = await this.$api.getCategories()
+    this.categories = categories
+    this.$store.commit('categories/SET_CATEGORIES', categories)
+  },
 }
 </script>
 
