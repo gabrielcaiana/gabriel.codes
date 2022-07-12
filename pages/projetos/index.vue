@@ -1,12 +1,20 @@
 <template>
   <div class="container mx-auto">
-    <ProjectsGrid />
+    <ProjectsGrid :projects="projects" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'AppProjects',
+
+  async asyncData({ $api }) {
+    const projects = await $api.getProjects()
+    return {
+      projects,
+    }
+  },
+
   head() {
     return {
       title: 'Projetos',

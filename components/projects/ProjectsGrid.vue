@@ -51,11 +51,11 @@
         class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
         aria-label="Single Project"
       >
-        <NuxtLink :to="`/projetos/${project.id}`">
+        <NuxtLink :to="`/projetos/${project.attributes.slug}`">
           <div>
             <img
-              :src="project.img"
-              :alt="project.title"
+              :src="`${$config.apiURL}${project.attributes.cover.data.attributes.url}`"
+              :alt="project.attributes.title"
               class="rounded-t-xl border-none"
             />
           </div>
@@ -63,11 +63,11 @@
             <p
               class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
-              {{ project.title }}
+              {{ project.attributes.title }}
             </p>
             <span
               class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light"
-              >{{ project.category }}</span
+              >{{ project.attributes.categorie }}</span
             >
           </div>
         </NuxtLink>
@@ -77,9 +77,15 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'ProjectsGrid',
+  props: {
+    projects: {
+      type: Array,
+      required: true,
+    },
+  },
   data: () => {
     return {
       selectedProject: '',
@@ -87,7 +93,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(['projects', 'categories']),
+     ...mapGetters({
+      categories: 'categories/getCategories',
+    }),
+    
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory()
@@ -101,17 +110,19 @@ export default {
       return this.projects
     },
   },
+
   methods: {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
         const category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1)
-        return category.includes(this.selectedProject)
+          item.attributes.categorie.charAt(0).toUpperCase() +
+          item.attributes.categorie.slice(1)
+        return category.includes(this.selectedProject.charAt(0).toUpperCase())
       })
     },
     filterProjectsBySearch() {
       const project = new RegExp(this.searchProject, 'i')
-      return this.projects.filter((el) => el.title.match(project))
+      return this.projects.filter((el) => el.attributes.title.match(project))
     },
   },
 }

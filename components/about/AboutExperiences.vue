@@ -3,35 +3,38 @@
     <p
       class="font-general-medium text-2xl text-center sm:text-3xl text-primary-dark dark:text-primary-light"
     >
-      Algumas das empresas com quem trabalhei
+      Algumas das empresas em que trabalhei
     </p>
     <div class="grid grid-cols-2 sm:grid-cols-6 mt-10 sm:mt-14 gap-2">
-      <AboutClientSingle
-        v-for="client in clients"
-        :key="client.id"
-        class="client"
-        :client="client"
+      <AboutExperienceSingle
+        v-for="experience in experiences"
+        :key="experience.id"
+        class="experiencie"
+        :experience="experience.attributes"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
 export default {
-  name: 'AboutClients',
-  computed: {
-    ...mapState(['clientsHeading', 'clients']),
+  name: 'AboutExperiences',
+
+  props: {
+    experiences: {
+      type: Array,
+      default: () => [],
+    }
   },
 }
 </script>
 
 <style lang="css" scoped>
-.client {
+.experiencie {
   filter: grayscale(100%);
   transition: all 300ms;
 }
-.client:hover {
+.experiencie:hover {
   filter: grayscale(0);
 }
 </style>

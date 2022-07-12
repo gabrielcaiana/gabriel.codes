@@ -8,11 +8,11 @@
     <option value class="text-sm sm:text-md">Todos projetos</option>
     <option
       v-for="option in selectOptions"
-      :key="option.name"
-      :value="option.name"
+      :key="option.id"
+      :value="option.attributes.value"
       class="sm:text-md"
     >
-      {{ option.name }}
+      {{ option.attributes.name }}
     </option>
   </select>
 </template>

@@ -69,9 +69,9 @@
                       <option
                         v-for="category in categories"
                         :key="category.id"
-                        :value="category.value"
+                        :value="category.attributes.value"
                       >
-                        {{ category.name }}
+                        {{ category.attributes.name }}
                       </option>
                     </select>
                   </div>
@@ -122,8 +122,8 @@ export default {
       default: false,
     },
     categories: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
   },
   data: () => {

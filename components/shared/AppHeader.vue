@@ -154,8 +154,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
+import { mapGetters } from 'vuex'
 export default {
   name: 'AppHeader',
   data: () => {
@@ -166,8 +165,11 @@ export default {
   },
 
   computed: {
-    ...mapState(['categories']),
+    ...mapGetters({
+      categories: 'categories/getCategories',
+    }),
   },
+
   methods: {
     themeSwitcher() {
       this.$colorMode.preference =

@@ -1,8 +1,8 @@
 <template>
   <div>
     <img
-      :src="client.img"
-      :alt="client.title"
+      :src="`${$config.apiURL}${experience.cover.data[0].attributes.url}`"
+      :alt="experience.title"
       class="w-64 py-5 px-10 border border-ternary-light dark:border-ternary-dark shadow-sm rounded-lg mb-8 cursor-pointer dark:bg-secondary-light"
     />
   </div>
@@ -10,9 +10,9 @@
 
 <script>
 export default {
-  name: 'AboutClientSingle',
+  name: 'AboutExperienceSingle',
   props: {
-    client: {
+    experience: {
       type: Object,
       required: true,
     },

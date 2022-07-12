@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <AppBanner />
 
-    <ProjectsGrid />
+    <ProjectsGrid :projects="projects" />
 
     <div class="mt-5 sm:mt-14 flex justify-center">
       <NuxtLink
@@ -19,5 +19,12 @@
 <script>
 export default {
   name: 'AppHome',
+
+  async asyncData({ $api }) {
+    const projects = await $api.getProjects()
+    return {
+      projects,
+    }
+  },
 }
 </script>

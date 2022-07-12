@@ -56,10 +56,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    categories: {
-      type: Object,
-      default: () => {},
-    },
   },
 }
 </script>
