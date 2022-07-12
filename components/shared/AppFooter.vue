@@ -13,27 +13,32 @@
           <a
             v-for="social in socialProfiles"
             :key="social.id"
-            :href="social.url"
+            :href="social.attributes.url"
             target="__blank"
             class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
           >
-            <BaseIcon :name="social.icon" class="w-6 sm:w-8 h-6 sm:h-8" />
+            <BaseIcon :name="social.attributes.icon" class="w-6 sm:w-8 h-6 sm:h-8" />
           </a>
         </ul>
       </div>
-
       <FooterCopyright />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'AppFooter',
-  computed: {
-    ...mapState(['copyrightDate', 'socialProfiles']),
+
+  data() {
+    return {
+      socialProfiles: []
+    }
+  },
+
+  async mounted() {
+    const socialProfiles = await this.$api.getSocials()
+    this.socialProfiles = socialProfiles
   },
 }
 </script>

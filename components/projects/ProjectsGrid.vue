@@ -77,7 +77,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 export default {
   name: 'ProjectsGrid',
   props: {
@@ -90,10 +89,10 @@ export default {
     return {
       selectedProject: '',
       searchProject: '',
+      categories: []
     }
   },
   computed: {
-    ...mapState(['categories']),
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory()
@@ -107,13 +106,19 @@ export default {
       return this.projects
     },
   },
+
+  async mounted() {
+    const categories = await this.$api.getCategories()
+    this.categories = categories
+  },
+
   methods: {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
         const category =
           item.attributes.categorie.charAt(0).toUpperCase() +
           item.attributes.categorie.slice(1)
-        return category.includes(this.selectedProject)
+        return category.includes(this.selectedProject.charAt(0).toUpperCase())
       })
     },
     filterProjectsBySearch() {

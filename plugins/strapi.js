@@ -1,5 +1,7 @@
 import { projectsQuerie, projectSlugQuerie } from '~/graphql/projects/queries'
 import { ExperiencesQuerie } from '~/graphql/experiences/queries'
+import { SocialQuerie } from '~/graphql/social/queries'
+import { CategoriesQuerie } from '~/graphql/categories/queries'
 
 export default function ({ app }, inject) {
   const client = app.apolloProvider.defaultClient
@@ -33,9 +35,26 @@ export default function ({ app }, inject) {
     return data?.experiences.data
   }
 
+  const getSocials = async () => {
+    const { data } = await client.query({
+      query: SocialQuerie(),
+    })
+
+    return data?.socials.data
+  }
+
+  const getCategories = async () => {
+    const { data } = await client.query({
+      query: CategoriesQuerie(),
+    })
+    return data?.categories.data
+  }
+
   inject('api', {
     getProjects,
     getProject,
-    getExperiences
+    getExperiences,
+    getSocials,
+    getCategories
   })
 }
