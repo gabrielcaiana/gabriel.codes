@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics'
   ],
 
   loading: {
@@ -66,6 +67,10 @@ export default {
     },
   },
 
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID // Use as fallback if no runtime config is provided
+  },
+
   publicRuntimeConfig: {
     apiURL: process.env.API_URL,
     emailjs: {
@@ -74,5 +79,8 @@ export default {
       templateId2: process.env.VUE_EMAILJS_TEMPLATE2_ID,
       serviceId: process.env.VUE_EMAILJS_SERVICE_ID,
     },
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }
   },
 }
