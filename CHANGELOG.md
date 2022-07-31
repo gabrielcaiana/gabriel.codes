@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.3.0...v1.4.0) (2022-07-31)
+
+
+### Features
+
+* config google analytics" ([0c52055](https://github.com/gabrielcaiana/gabriel.codes/commit/0c52055c1d1a65db4cd5fd1d08646453d1c9f787))
+
 ## [1.3.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.2.0...v1.3.0) (2022-07-12)
 
 
