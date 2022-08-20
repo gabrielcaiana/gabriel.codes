@@ -1,11 +1,20 @@
 <template>
   <div class="container mx-auto">
-    <div class="w-full flex justify-center items-center mt-10">
-      <h1 class="dark:text-white text-gray-500 text-xl">Listar repositorios</h1>
-
       <span v-if="!list">loading...</span>
-      <pre v-else class="text-white">{{ list }}</pre>
-    </div>
+      <div class="flex flex-col gap-4 max-w-3xl m-auto mt-10">
+       <h1
+        class="font-general-semibold text-xl sm:text-3xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
+        >
+        Repositórios do github
+      </h1>
+        <div 
+        v-for="item in list" 
+        :key="item.id" 
+        class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark p-6 text-white"
+      >
+        {{ item.name}}
+      </div>
+      </div>
   </div>
 </template>
 
