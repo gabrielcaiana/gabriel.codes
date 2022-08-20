@@ -1,8 +1,8 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/github', (_req, res) => {
-  res.send('server github')
+routes.get('/repos', (_req, res) => {
+  res.json()
 })
 
 module.exports = routes

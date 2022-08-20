@@ -46,7 +46,15 @@ export default {
     continuous: true,
   },
 
-  modules: ['@nuxtjs/pwa', '@nuxtjs/apollo'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/apollo', ['@nuxtjs/proxy', { ws: false }]],
+
+  proxy: {
+    '/github': {
+      target: process.env.GITHUB_SERVICE,
+      changeOrigin: true,
+      pathRewrite: (path) => path.replace(/^\/github/, '')
+    }
+  },
 
   apollo: {
     clientConfigs: {
