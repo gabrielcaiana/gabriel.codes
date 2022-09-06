@@ -1,7 +1,11 @@
 <template>
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <div class="w-full sm:w-1/4 mb-7 sm:mb-0">
-      <img src="~/static/profile.png" class="rounded-lg w-96" alt="" />
+      <img
+        :src="`${$config.apiURL}/uploads/profile_pic_2_bbd6e2c7c4.png?updated_at=2022-09-06T19:18:46.898Z`"
+        class="rounded-lg w-96"
+        alt=""
+      />
     </div>
     <div class="w-full sm:w-3/4 text-left">
       <p
