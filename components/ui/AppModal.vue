@@ -9,7 +9,7 @@
           class="absolute -right-3 -top-3 bg-green-500 rounded-full p-2"
           @click="close"
         >
-          <BaseIcon class="text-primary-light cursor-pointer" name="x" />
+          <AppIcon class="text-primary-light cursor-pointer" name="x" />
         </div>
         <slot />
       </div>

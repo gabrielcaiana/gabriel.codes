@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <HireMeModal
+    <AppHireMeModal
       :show-modal="showModal"
       :modal="modal"
       :categories="categories"

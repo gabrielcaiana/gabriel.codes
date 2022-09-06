@@ -26,7 +26,7 @@ export default {
     classSuffix: '',
   },
 
-  css: ['~/assets/app.css'],
+  css: ['~/assets/scss/index.scss'],
 
   components: [{ path: '@/components', pathPrefix: false }],
 
@@ -36,8 +36,13 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/style-resources',
   ],
+
+  styleResources: {
+    scss: [],
+  },
 
   loading: {
     color: 'green',
@@ -68,7 +73,7 @@ export default {
   },
 
   googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID // Use as fallback if no runtime config is provided
+    id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   },
 
   publicRuntimeConfig: {
@@ -80,7 +85,7 @@ export default {
       serviceId: process.env.VUE_EMAILJS_SERVICE_ID,
     },
     googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID
-    }
+      id: process.env.GOOGLE_ANALYTICS_ID,
+    },
   },
 }

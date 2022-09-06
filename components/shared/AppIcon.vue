@@ -1,17 +1,17 @@
 <template>
-  <i
+  <em
     :height="size"
     :width="size"
     :data-feather="name"
     :class="$attrs.class"
-  ></i>
+  ></em>
 </template>
 
 <script>
 import feather from 'feather-icons'
 
 export default {
-  name: 'BaseIcon',
+  name: 'AppIcon',
   props: {
     name: {
       type: String,

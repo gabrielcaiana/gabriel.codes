@@ -17,11 +17,33 @@
             target="__blank"
             class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
           >
-            <BaseIcon :name="social.attributes.icon" class="w-6 sm:w-8 h-6 sm:h-8" />
+            <AppIcon
+              :name="social.attributes.icon"
+              class="w-6 sm:w-8 h-6 sm:h-8"
+            />
           </a>
         </ul>
       </div>
-      <FooterCopyright />
+      <div class="flex justify-center items-center text-center">
+        <div
+          class="font-general-regular text-lg text-ternary-dark dark:text-ternary-light"
+        >
+          &copy; {{ new Date().getFullYear() }}.
+          <a
+            href="https://github.com/gabrielcaiana"
+            target="__blank"
+            class="font-general-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 duration-500"
+            >Portfolio</a
+          >
+          . Developed by
+          <a
+            href="https://gabrielcaiana.com"
+            target="__blank"
+            class="font-general-medium text-secondary-dark dark:text-secondary-light uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 duration-500"
+            >Gabriel Caiana</a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +54,7 @@ export default {
 
   data() {
     return {
-      socialProfiles: []
+      socialProfiles: [],
     }
   },
 

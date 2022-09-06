@@ -22,7 +22,7 @@
                   class="px-4 text-primary-dark dark:text-primary-light"
                   @click=";[showModal(), resetForm()]"
                 >
-                  <BaseIcon name="x" class="w-8 sm:w-12" />
+                  <AppIcon name="x" class="w-8 sm:w-12" />
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">

@@ -9,7 +9,7 @@
         </p>
         <div class="flex">
           <div class="flex items-center mr-10">
-            <BaseIcon
+            <AppIcon
               name="clock"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             />
@@ -20,7 +20,7 @@
             >
           </div>
           <div class="flex items-center">
-            <BaseIcon
+            <AppIcon
               name="tag"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             />
@@ -41,7 +41,11 @@
           <img
             :src="`${$config.apiURL}${projectImage.attributes.url}`"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
-            @click="showProjectImageDialog(`${$config.apiURL}${projectImage.attributes.url}`)"
+            @click="
+              showProjectImageDialog(
+                `${$config.apiURL}${projectImage.attributes.url}`
+              )
+            "
           />
         </div>
       </div>
@@ -96,7 +100,7 @@
                 aria-label="Share Project"
                 class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
               >
-                <BaseIcon :name="social.icon" class="w-4 lg:w-5 h-4 lg:h-5" />
+                <AppIcon :name="social.icon" class="w-4 lg:w-5 h-4 lg:h-5" />
               </a>
             </div>
           </div>
@@ -160,7 +164,7 @@ export default {
       }
 
       return socialMeta(data)
-    }
+    },
   },
 
   methods: {

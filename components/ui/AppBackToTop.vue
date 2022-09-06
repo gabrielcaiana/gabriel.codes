@@ -5,7 +5,7 @@
       class="transition duration-500 transform hover:scale-110 rounded-full cursor-pointer flex p-2 bg-green-400 hover:bg-green-500 text-white items-center hover:shadow-sm border-none ring-none outline-none"
       @click="backToTop"
     >
-      <BaseIcon name="chevron-up" />
+      <AppIcon name="chevron-up" />
     </div>
   </transition>
 </template>

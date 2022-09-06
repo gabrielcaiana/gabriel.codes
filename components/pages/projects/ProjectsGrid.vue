@@ -21,7 +21,7 @@
           <span
             class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
           >
-            <BaseIcon
+            <AppIcon
               class="text-ternary-dark dark:text-ternary-light"
               name="search"
             />
@@ -93,10 +93,10 @@ export default {
     }
   },
   computed: {
-     ...mapGetters({
+    ...mapGetters({
       categories: 'categories/getCategories',
     }),
-    
+
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory()

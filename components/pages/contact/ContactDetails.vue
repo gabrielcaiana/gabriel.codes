@@ -8,7 +8,7 @@
       </h2>
       <ul class="font-general-regular">
         <li v-for="contact in contacts" :key="contact.id" class="flex">
-          <BaseIcon
+          <AppIcon
             :name="contact.icon"
             class="w-5 text-gray-500 dark:text-gray-400 mr-4"
           />

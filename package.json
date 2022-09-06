@@ -20,7 +20,9 @@
     "url": "https://github.com/gabrielcaiana/gabriel.codes"
   },
   "keywords": [
-    "Gabriel Caiana"
+    "Gabriel Caiana",
+    "Frontend",
+    "Desenvolvimento web"
   ],
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
@@ -51,7 +53,9 @@
     "eslint-plugin-vue": "^8.2.0",
     "husky": "^8.0.1",
     "postcss": "^8.3.5",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "sass": "^1.54.8",
+    "sass-loader": "^13.0.2"
   },
   "config": {
     "commitizen": {

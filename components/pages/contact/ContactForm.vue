@@ -83,7 +83,7 @@
         </div>
 
         <div class="mt-6">
-          <Button
+          <AppButton
             title="Enviar mensagem"
             class="px-4 py-2.5 text-white tracking-wider bg-green-400 hover:bg-green-500 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
             type="submit"
