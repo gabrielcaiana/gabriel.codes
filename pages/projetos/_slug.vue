@@ -40,6 +40,7 @@
         >
           <img
             :src="`${$config.apiURL}${projectImage.attributes.url}`"
+            :alt="project.title"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
             @click="
               showProjectImageDialog(
@@ -53,6 +54,7 @@
       <AppModal>
         <img
           :src="dialogImage"
+          :alt="project.title"
           class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
         />
       </AppModal>
