@@ -13,7 +13,7 @@
     <div
       class="flex space-x-2 mr-8 mb-6 right-0 bottom-0 z-50 fixed items-center sm:space-x-4"
     >
-      <BackToTop />
+      <AppBackToTop />
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@
 <script>
 export default {
   name: 'LayoutDefault',
-  
+
   async mounted() {
     const categories = await this.$api.getCategories()
     this.categories = categories

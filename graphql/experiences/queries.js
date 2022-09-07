@@ -8,6 +8,9 @@ export const ExperiencesQuerie = () => gql`
         attributes {
           title
           slug
+          company
+          period
+          description
           cover {
             data {
               id
