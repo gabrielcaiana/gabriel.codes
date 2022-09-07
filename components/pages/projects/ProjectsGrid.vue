@@ -52,11 +52,11 @@
         aria-label="Single Project"
       >
         <NuxtLink :to="`/projetos/${project.attributes.slug}`">
-          <div>
+          <div v-if="project.attributes.cover.data">
             <img
               :src="`${$config.apiURL}${project.attributes.cover.data.attributes.url}`"
               :alt="project.attributes.title"
-              class="rounded-t-xl border-none"
+              class="rounded-t-xl h-40 w-full border-none object-fill"
             />
           </div>
           <div class="text-center px-4 py-6">
@@ -109,6 +109,10 @@ export default {
       }
       return this.projects
     },
+  },
+
+  mounted() {
+    console.log(this.projects)
   },
 
   methods: {

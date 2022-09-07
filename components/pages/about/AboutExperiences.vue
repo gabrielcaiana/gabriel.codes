@@ -1,11 +1,11 @@
 <template>
   <div class="mt-10 sm:mt-20">
     <p
-      class="font-general-medium text-2xl text-center sm:text-3xl text-primary-dark dark:text-primary-light"
+      class="font-general-medium text-2xl text-left sm:text-3xl text-primary-dark dark:text-primary-light"
     >
-      Algumas das empresas em que trabalhei
+      Experiência
     </p>
-    <div class="grid grid-cols-2 sm:grid-cols-6 mt-10 sm:mt-14 gap-2">
+    <div class="mt-10 flex flex-col gap-10">
       <AboutExperienceSingle
         v-for="experience in experiences"
         :key="experience.id"
@@ -24,7 +24,7 @@ export default {
     experiences: {
       type: Array,
       default: () => [],
-    }
+    },
   },
 }
 </script>
