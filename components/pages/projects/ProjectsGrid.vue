@@ -56,7 +56,7 @@
             <img
               :src="`${$config.apiURL}${project.attributes.cover.data.attributes.url}`"
               :alt="project.attributes.title"
-              class="rounded-t-xl h-40 w-full border-none object-fill"
+              class="rounded-t-xl h-40 w-full border-none object-cover"
             />
           </div>
           <div class="text-center px-4 py-6">
