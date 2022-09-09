@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.4.0...v1.4.1) (2022-09-09)
+
+
+### Bug Fixes
+
+* fix image size ([b4392e3](https://github.com/gabrielcaiana/gabriel.codes/commit/b4392e37b3386f7237b5d9103dcb08a496735dcf))
+
 ## [1.4.0](https://github.com/gabrielcaiana/gabriel.codes/compare/v1.3.0...v1.4.0) (2022-07-31)
 
 
