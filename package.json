@@ -33,7 +33,7 @@
     "dotenv": "^16.0.2",
     "feather-icons": "^4.28.0",
     "graphql-tag": "^2.12.6",
-    "nuxt": "^2.15.7",
+    "nuxt": "^3.4.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
